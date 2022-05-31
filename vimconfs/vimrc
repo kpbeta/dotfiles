@@ -1,5 +1,5 @@
 " Basic universal configurations
-set nu rnu
+set rnu
 
 " Syntax and highlighting
 syntax enable
