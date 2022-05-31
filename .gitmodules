@@ -7,3 +7,6 @@
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-surround"]
 	path = vimconfs/dotvim/pack/any_name/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vimconfs/dotvim/pack/any_name/start/vim-airline"]
+	path = vimconfs/dotvim/pack/any_name/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
