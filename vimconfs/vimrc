@@ -1,0 +1,8 @@
+" Basic universal configurations
+set nu rnu
+
+" Syntax and highlighting
+syntax enable
+filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
+" for filetype confugirations
+
