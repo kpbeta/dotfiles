@@ -25,3 +25,4 @@
 [submodule "vimconfs/awesome-vimrc"]
 	path = vimconfs/awesome-vimrc
 	url = https://github.com/amix/vimrc.git
+	ignore = dirty
