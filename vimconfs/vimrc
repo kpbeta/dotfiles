@@ -7,4 +7,5 @@ filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
 " for filetype confugirations
 
 " We can source other vimrc for modularity using "source <filename>"
-source $DOTS/vimconfs/NERDTree.vimrc
+" source $DOTS/vimconfs/NERDTree.vimrc
+source ./NERDTree.vimrc
