@@ -8,4 +8,4 @@ filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
 
 " We can source other vimrc for modularity using "source <filename>"
 " source $DOTS/vimconfs/NERDTree.vimrc
-source ./NERDTree.vimrc
+source ~/.plugins.vimrc/NERDTree.vimrc
