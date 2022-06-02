@@ -6,6 +6,9 @@
 - clean: ['~']
 
 - link:
+    # EDITORS
     ~/.vimrc: vimconfs/vimrc
     ~/.vim: vimconfs/dotvim
 
+    # SHELLS
+    ~/.p10k.zsh: shellconfs/zshconfs/p10k.zsh
