@@ -1,0 +1,9 @@
+[submodule "dotvim/pack/vim-surround"]
+	path = dotvim/pack/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "dotvim/pack/vim-commentary"]
+	path = dotvim/pack/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "dotvim/pack/nerdtree"]
+	path = dotvim/pack/nerdtree
+	url = https://github.com/preservim/nerdtree.git
