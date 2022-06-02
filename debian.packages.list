@@ -1,3 +1,6 @@
+# Use this file to get list of packages to install
+# You would want to grep lines without # sign and feed to apt install with xargs
+# grep -v \# debian.packages.list | xargs -L1 sudo apt install -y
 # Programming, Scripting
 # Net Utilities
 # System Utilities
