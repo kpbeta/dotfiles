@@ -11,7 +11,7 @@
 	url = https://github.com/tpope/vim-surround.git
 	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-airline"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-airline
+	path = vimconfs/dotvim/pack/any_name/doghouse/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-go"]
@@ -25,4 +25,8 @@
 [submodule "vimconfs/awesome-vimrc"]
 	path = vimconfs/awesome-vimrc
 	url = https://github.com/amix/vimrc.git
+	ignore = dirty
+[submodule "vimconfs/dotvim/pack/any_name/start/lightline.vim"]
+	path = vimconfs/dotvim/pack/any_name/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
 	ignore = dirty
