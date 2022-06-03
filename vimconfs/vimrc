@@ -6,6 +6,11 @@ syntax enable
 filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
 " for filetype confugirations
 
+" Enable mouse support
+set mouse=a
+
 " We can source other vimrc for modularity using "source <filename>"
 " source $DOTS/vimconfs/NERDTree.vimrc
 source ~/.plugins.vimrc/NERDTree.vimrc
+
+

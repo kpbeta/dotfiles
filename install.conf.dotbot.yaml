@@ -13,3 +13,5 @@
 
     # SHELLS
     ~/.p10k.zsh: shellconfs/zshconfs/p10k.zsh
+    # TMUX
+    ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 
