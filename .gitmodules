@@ -4,7 +4,7 @@
 	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/commentary"]
 	path = vimconfs/dotvim/pack/any_name/start/commentary
-	url = https://tpope.io/vim/commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-surround"]
 	path = vimconfs/dotvim/pack/any_name/start/vim-surround
@@ -14,6 +14,10 @@
 	path = vimconfs/dotvim/pack/any_name/start/vim-go
 	url = https://github.com/fatih/vim-go.git
 	ignore = dirty
+[submodule "vimconfs/dotvim/pack/any_name/start/lightline.vim"]
+	path = vimconfs/dotvim/pack/any_name/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+	ignore = dirty
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
@@ -22,3 +26,4 @@
 	path = vimconfs/awesome-vimrc
 	url = https://github.com/amix/vimrc.git
 	ignore = dirty
+
