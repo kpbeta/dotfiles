@@ -34,7 +34,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$MYAPP/go-pkgs
 
 # Add Android Studio
-export PATH=$PATH:$HOME/MyApplications/android-studio/bin
+export PATH=$PATH:$MYAPP/android-studio/bin
 alias android="nohup studio > /dev/null &"
 
 
