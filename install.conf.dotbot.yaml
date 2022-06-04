@@ -12,6 +12,8 @@
     ~/.plugins.vimrc: vimconfs/plugins.vimrc
 
     # SHELLS
-    ~/.p10k.zsh: shellconfs/zshconfs/p10k.zsh
+    ~/.zshrc: shellconfs/zshconfs/dotzshrc
+    ~/.bashrc: shellconfs/bashconfs/dotbashrc
+    ~/.p10k.zsh: shellconfs/zshconfs/dotp10k.zsh
     # TMUX
     ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 
