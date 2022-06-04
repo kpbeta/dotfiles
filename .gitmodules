@@ -1,22 +1,6 @@
-[submodule "vimconfs/dotvim/pack/any_name/start/nerdtree"]
-	path = vimconfs/dotvim/pack/any_name/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/commentary"]
-	path = vimconfs/dotvim/pack/any_name/start/commentary
-	url = https://tpope.io/vim/commentary.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-surround"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-airline"]
 	path = vimconfs/dotvim/pack/any_name/doghouse/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-go"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-go
-	url = https://github.com/fatih/vim-go.git
 	ignore = dirty
 [submodule "dotbot"]
 	path = dotbot
@@ -25,8 +9,4 @@
 [submodule "vimconfs/awesome-vimrc"]
 	path = vimconfs/awesome-vimrc
 	url = https://github.com/amix/vimrc.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/lightline.vim"]
-	path = vimconfs/dotvim/pack/any_name/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
 	ignore = dirty
