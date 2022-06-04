@@ -10,10 +10,6 @@
 	path = vimconfs/dotvim/pack/any_name/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-airline"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-	ignore = dirty
 [submodule "vimconfs/dotvim/pack/any_name/start/vim-go"]
 	path = vimconfs/dotvim/pack/any_name/start/vim-go
 	url = https://github.com/fatih/vim-go.git
