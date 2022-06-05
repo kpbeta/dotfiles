@@ -27,3 +27,6 @@
 	url = https://github.com/amix/vimrc.git
 	ignore = dirty
 
+[submodule "vimconfs/dotvim/pack/any_name/start/fzf.vim"]
+	path = vimconfs/dotvim/pack/any_name/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
