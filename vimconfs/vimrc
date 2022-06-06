@@ -14,4 +14,8 @@ set mouse=a
 " source $DOTS/vimconfs/NERDTree.vimrc
 source ~/.plugins.vimrc/NERDTree.vimrc
 
+" VIM Whitespace - Added whitespaces
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
+
 
