@@ -20,7 +20,15 @@ set mouse=a
 " source $DOTS/vimconfs/NERDTree.vimrc
 source ~/.plugins.vimrc/NERDTree.vimrc
 
-
-" Vim Commentary
+" Vim Commentary Plugin; Will add to go.vim
 autocmd FileType go setlocal commentstring=#\ %s
 
+" ====== Custom Settings =======
+
+
+
+
+
+" ======= Experimental Settings =========
+inoremap kj <ESC>	" Added additional interactive mode <ESC>
+vnoremap kj <ESC>	" Added additional interactive mode <ESC>
