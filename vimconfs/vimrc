@@ -10,13 +10,17 @@ filetype indent on
 " Enable mouse support
 set mouse=a
 
-" We can source other vimrc for modularity using "source <filename>"
-" source $DOTS/vimconfs/NERDTree.vimrc
-source ~/.plugins.vimrc/NERDTree.vimrc
-
 " VIM Whitespace - Added whitespaces
 " Using vim plugin for better spaces; Using this for just backup
 " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " set nolist
 
+
+" We can source other vimrc for modularity using "source <filename>"
+" source $DOTS/vimconfs/NERDTree.vimrc
+source ~/.plugins.vimrc/NERDTree.vimrc
+
+
+" Vim Commentary
+autocmd FileType go setlocal commentstring=#\ %s
 
