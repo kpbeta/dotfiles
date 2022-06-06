@@ -15,7 +15,8 @@ set mouse=a
 source ~/.plugins.vimrc/NERDTree.vimrc
 
 " VIM Whitespace - Added whitespaces
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
+" Using vim plugin for better spaces; Using this for just backup
+" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" set nolist
 
 
