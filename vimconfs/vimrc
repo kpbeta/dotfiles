@@ -5,6 +5,7 @@ set rnu
 syntax enable
 filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
 " for filetype confugirations
+filetype indent on
 
 " Enable mouse support
 set mouse=a

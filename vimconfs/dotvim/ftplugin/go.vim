@@ -59,7 +59,7 @@ let g:go_metalinter_autosave = 1
 
 
 
-" set noexpandtab
-" set tabstop=8
-" set shiftwidth=8
-" set softtabstop=0
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
