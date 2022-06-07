@@ -24,11 +24,11 @@ source ~/.plugins.vimrc/NERDTree.vimrc
 autocmd FileType go setlocal commentstring=#\ %s
 
 " ====== Custom Settings =======
-
-
-
-
+let mapleader = "\<Space>"	" <Leader>
+let mapleader = "\\"		" <Local Leader>
 
 " ======= Experimental Settings =========
 inoremap kj <ESC>	" Added additional interactive mode <ESC>
 vnoremap kj <ESC>	" Added additional interactive mode <ESC>
+inoremap df <ESC>	" Added additional interactive mode <ESC>
+vnoremap df <ESC>	" Added additional interactive mode <ESC>

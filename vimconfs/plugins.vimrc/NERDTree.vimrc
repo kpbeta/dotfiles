@@ -19,3 +19,9 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Mirror the NERDTree before showing it. This makes it the same on all tabs.
 " nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+
+" ====== Experimental settings =======
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTree<CR>
+
