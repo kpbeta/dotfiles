@@ -2,6 +2,7 @@
 Sensible dotfiles
 
 Use `--recurse-submodules` while cloning to get plugins submodules cloned too.
+Use `git submodule update --init --recursive` if already cloned.
 
 Or update later using update:
 
