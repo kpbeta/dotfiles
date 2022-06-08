@@ -1,18 +1,32 @@
-" Basic universal configurations
-set rnu
+set nocompatible 	" not vi compatible
 
-" Syntax and highlighting
-syntax enable
-filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
-" for filetype confugirations
-filetype indent on
-
-" Enable mouse support
-set mouse=a
-
-" ====== Custom Settings =======
+" ============= LEADER ================
 let mapleader = "\<Space>"	" <Leader>
 let mapleader = "\\"		" <Local Leader>
+
+" ===== Basic universal configurations ================
+set nu rnu
+set mouse+=a 		" Enable mouse support
+set splitbelow splitright
+set history=812		" More history
+
+" ======= SYNTAX and HIGHLIGHTS ========================
+syntax enable
+"syntax on " This is similar to syntax enable - but overides color settings
+filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
+filetype indent on " This and above line might need fpdetect
+set autoindent
+
+" ============ TAB and INDENT ==========================
+set expandtab
+set tabstop=4 shiftwidth=4 softtabstop=4
+
+" =========== SEARCHES =================================
+set ignorecase
+set smartcase
+set incsearch hls 	" incremental search and highlight search
+
+" ====== Custom Settings =======
 
 " ======= Experimental Settings =========
 inoremap kj <ESC>	" Added additional interactive mode <ESC>
@@ -28,9 +42,8 @@ vnoremap df <ESC>	" Added additional interactive mode <ESC>
 " Vim Commentary Plugin; Will add to go.vim
 " autocmd FileType go setlocal commentstring=#\ %s
 
-" ===== PLUGIN SOURCES ==================
+" =========== EXT PLUGIN SOURCES ==================
 " We can source other vimrc for modularity using "source <filename>"
-" source $DOTS/vimconfs/NERDTree.vimrc
 source ~/.plugins.vimrc/NERDTree.vimrc
 
 
