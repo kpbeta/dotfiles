@@ -81,6 +81,7 @@ plugins=(
     git
     z
     python
+    terraform
 )
 
 source $ZSH/oh-my-zsh.sh
