@@ -50,3 +50,7 @@
 	path = vimconfs/dotvim/pack/any_name/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
 	ignore = dirty
+[submodule "vimconfs/dotvim/pack/any_name/start/vim-terraform-completion"]
+	path = vimconfs/dotvim/pack/any_name/start/vim-terraform-completion
+	url = https://github.com/juliosueiras/vim-terraform-completion.git
+	ignore = dirty
