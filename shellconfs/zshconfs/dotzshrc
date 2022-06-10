@@ -82,6 +82,7 @@ plugins=(
     z
     python
     terraform
+    aws
 )
 
 source $ZSH/oh-my-zsh.sh

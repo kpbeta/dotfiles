@@ -21,7 +21,7 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
 " ====== Experimental settings =======
-nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+noremap <leader>t :NERDTreeToggle<CR>
+noremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>n :NERDTree<CR>
 
