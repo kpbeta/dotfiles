@@ -46,3 +46,7 @@
 	path = vimconfs/dotvim/pack/any_name/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
 	ignore = dirty
+[submodule "vimconfs/dotvim/pack/any_name/start/vim-terraform"]
+	path = vimconfs/dotvim/pack/any_name/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
+	ignore = dirty
