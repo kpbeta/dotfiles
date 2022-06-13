@@ -17,3 +17,4 @@
     ~/.p10k.zsh: shellconfs/zshconfs/dotp10k.zsh
     # TMUX
     ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 
+    ~/.tmux: shellconfs/tmuxconfs/dottmuxdir
