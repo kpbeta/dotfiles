@@ -36,11 +36,14 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
+" ============ COLONS SEMICOLONS ======================
+nnoremap ; :
+
 " ======= Experimental Settings =========
 inoremap kj <ESC>	" Added additional interactive mode <ESC>
 vnoremap kj <ESC>	" Added additional interactive mode <ESC>
-" inoremap df <ESC>	" Added additional interactive mode <ESC>
-" vnoremap df <ESC>	" Added additional interactive mode <ESC>
+inoremap df <ESC>	" Added additional interactive mode <ESC>
+vnoremap df <ESC>	" Added additional interactive mode <ESC>
 
 " VIM Whitespace - Added whitespaces
 " Using vim plugin for better spaces; Using this for just backup
