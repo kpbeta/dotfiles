@@ -29,10 +29,10 @@ fi
 # VIM friendly setup
 # Use gnome-tweaks to use Caps-Lock as Ctrl
 # xcape (needs installing) to use Ctrl_L as escape
-xcape -e 'Caps_Lock=Escape'
-xcape -e 'Control_L=Escape'
-xcape -e 'Control_R=Escape'
-xcape -e 'Shift_R=Tab'
+xcape -t 500 -e 'Caps_Lock=Escape'
+xcape -t 500 -e 'Control_L=Escape'
+xcape -t 500 -e 'Control_R=Escape'
+# xcape -t 500 -e 'Shift_R=Tab'
 
 # My local setup
 export MYAPP=$HOME/MyApplications
