@@ -1,3 +1,9 @@
+; Dotbot
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+; Vim plugins
 [submodule "vimconfs/dotvim/pack/any_name/start/nerdtree"]
 	path = vimconfs/dotvim/pack/any_name/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
@@ -17,10 +23,6 @@
 [submodule "vimconfs/dotvim/pack/any_name/start/lightline.vim"]
 	path = vimconfs/dotvim/pack/any_name/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
-	ignore = dirty
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 [submodule "vimconfs/awesome-vimrc"]
 	path = vimconfs/awesome-vimrc
@@ -54,7 +56,4 @@
 	path = vimconfs/dotvim/pack/any_name/start/vim-terraform-completion
 	url = https://github.com/juliosueiras/vim-terraform-completion.git
 	ignore = dirty
-[submodule "shellconfs/tmuxconfs/plugins/tpm"]
-	path = shellconfs/tmuxconfs/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-	ignore = dirty
+; TMUX
