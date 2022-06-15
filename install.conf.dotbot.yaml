@@ -18,6 +18,6 @@
     # TMUX
     ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 
     ~/.tmux: shellconfs/tmuxconfs/dottmuxdir
-    ~/.plugins.tmuxrc.d: shellconfs/tmuxconfs/plugins.tmuxrc.d
+    ~/.plugins.tmuxrc: shellconfs/tmuxconfs/plugins.tmuxrc
 
 
