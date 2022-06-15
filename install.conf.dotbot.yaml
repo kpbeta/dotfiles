@@ -14,6 +14,7 @@
     # SHELLS
     ~/.zshrc: shellconfs/zshconfs/dotzshrc
     ~/.bashrc: shellconfs/bashconfs/dotbashrc
+    ~/.profile: shellconfs/shells.profile
     ~/.p10k.zsh: shellconfs/zshconfs/dotp10k.zsh
     # TMUX
     ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 

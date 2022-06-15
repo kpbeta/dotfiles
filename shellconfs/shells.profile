@@ -26,16 +26,22 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# VIM friendly setup
+# Use gnome-tweaks to use Caps-Lock as Ctrl
+# xcape (needs installing) to use Ctrl_L as escape
+xcape -e 'Control_L=Escape'
+xcape -e 'Caps_Lock=Escape'
+xcape -e 'Control_R=Escape'
+xcape -e 'Shift_R=Tab'
+
 # My local setup
 export MYAPP=$HOME/MyApplications
+export DOTS=$MYAPP/dots  # DotFiles Location
+export PATH=$PATH:$MYAPP/bin
 
 # Add local installation directory
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$MYAPP/go-pkgs
 
 # Add Android Studio
-export PATH=$PATH:$MYAPP/android-studio/bin
+export PATH=$PATH:$HOME/MyApplications/android-studio/bin
 alias android="nohup studio > /dev/null &"
-
-
-
