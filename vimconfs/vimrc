@@ -1,8 +1,5 @@
 set nocompatible 	" not vi compatible
 
-" =========== PLUGINS ===================
-source ~/.vim/vim-plug.list.rc
-
 " ============= LEADER ================
 let mapleader = "\<Space>"	" <Leader>
 let localmapleader = "\\"		" <Local Leader>
@@ -57,4 +54,7 @@ vnoremap df <ESC>	" Added additional interactive mode <ESC>
 
 " Vim Commentary Plugin; Will add to go.vim
 " autocmd FileType go setlocal commentstring=#\ %s
+
+" =========== PLUGINS ===================
+source ~/.vim/vim-plug.list.rc
 
