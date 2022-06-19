@@ -1,0 +1,33 @@
+" =============================================================================
+"   PLUGINS
+" We can source other vimrc for modularity using "source <filename>"
+" =============================================================================
+call plug#begin()
+
+    " Search :::::::::::::::::::::::::::::::::::::::::::::::
+    Plug 'romainl/vim-cool'             " Disables highlight when search is done
+    Plug 'haya14busa/incsearch.vim'     " Better incremental search
+    
+    Plug 'junegunn/fzf.vim'
+    source ~/.vim/plugins.vimrc/FZF.vimrc
+
+    " GUI Enhancements ::::::::::::::::::::::::::::::::::::::
+    Plug 'preservim/nerdtree'
+    source ~/.vim/plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
+
+
+
+
+
+
+
+" if has('nvim-0.5')
+"    Plug 'phaazon/hop.nvim'
+
+ 
+call plug#end()
+
+
+" =========== EXT PLUGIN SOURCES ==================
+" source ~/.plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
+" source ~/.plugins.vimrc/FZF.vimrc
