@@ -11,14 +11,19 @@ call plug#begin()
     " ------------------------- Search -------------------------- 
     Plug 'romainl/vim-cool'             " Disables highlight when search is done
     Plug 'haya14busa/incsearch.vim'     " Better incremental search
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " FZF plugin, makes Ctrl-P unnecessary
     Plug 'junegunn/fzf.vim'
 
-    " --------------------  GUI Enhancements ------------------
-    Plug 'preservim/nerdtree'
+    " -------------------- GUI Colors ----------------------
     Plug 'powerline/powerline'
+    Plug 'ap/vim-css-color'
+    
+    " --------------------  GUI Functionality ------------------
+    Plug 'preservim/nerdtree'
 
     " ----------- Programming language support -----------------
     Plug 'hashivim/vim-terraform'
+    Plug 'juliosueiras/vim-terraform-completion'
 
 
 
