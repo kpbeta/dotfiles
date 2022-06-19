@@ -9,6 +9,8 @@ set nu rnu
 set mouse+=a 		" Enable mouse support
 set splitbelow splitright
 set history=812		" More history
+" toggle relative numbering
+nnoremap <C-n> :set rnu!<CR> 
 
 " ======= SYNTAX and HIGHLIGHTS ========================
 syntax enable
