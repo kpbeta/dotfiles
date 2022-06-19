@@ -1,23 +1,23 @@
-" =============================================================================
+" ============================================================================
 "   PLUGINS
 " We can source other vimrc for modularity using "source <filename>"
 " =============================================================================
 call plug#begin()
 
-    " Search :::::::::::::::::::::::::::::::::::::::::::::::
+    " ---------------------- Edit enhancmement ---------------
+    Plug 'tpope/vim-commentary'
+
+
+    " ------------------------- Search -------------------------- 
     Plug 'romainl/vim-cool'             " Disables highlight when search is done
     Plug 'haya14busa/incsearch.vim'     " Better incremental search
-    
     Plug 'junegunn/fzf.vim'
-    source ~/.vim/plugins.vimrc/FZF.vimrc
 
-    " GUI Enhancements ::::::::::::::::::::::::::::::::::::::
+    " --------------------  GUI Enhancements ------------------
     Plug 'preservim/nerdtree'
-    source ~/.vim/plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
 
-
-
-
+    " ----------- Programming language support -----------------
+    Plug 'hashivim/vim-terraform'
 
 
 
@@ -29,5 +29,5 @@ call plug#end()
 
 
 " =========== EXT PLUGIN SOURCES ==================
-" source ~/.plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
-" source ~/.plugins.vimrc/FZF.vimrc
+source ~/.vim/plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
+source ~/.vim/plugins.vimrc/FZF.vimrc
