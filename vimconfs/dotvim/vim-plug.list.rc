@@ -33,7 +33,7 @@ call plug#begin()
     " ----------- Programming language support -----------------
     Plug 'hashivim/vim-terraform'
     Plug 'juliosueiras/vim-terraform-completion'
-
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 " if has('nvim-0.5')
