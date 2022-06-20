@@ -1,0 +1,4 @@
+pane	primary	0	1	:*	0	KPRZ	:/home/kal/MyApplications/dots	0	zsh	:
+pane	primary	0	1	:*	1	KPRZ	:/home/kal	1	vim	:vim /home/kal/.tmux.conf
+window	primary	0	:vim	1	:*	ffc7,169x45,0,0{84x45,0,0,0,84x45,85,0,1}	:
+state	primary	
