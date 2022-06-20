@@ -4,6 +4,12 @@
 " =============================================================================
 call plug#begin()
 
+    " --------------------  Autcompletion  ------------------
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Needs to run `yarn install` inside coc.nvim directory
+    " `npm install --location=global yarn` to install yarn
+
+
     " ---------------------- Edit enhancmement ---------------
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-repeat'               " Adds repeat thorugh . to other packages

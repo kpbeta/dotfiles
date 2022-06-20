@@ -88,6 +88,7 @@ plugins=(
     python
     conda-zsh-completion # .oh-my-zsh/plugins...
     # git clone https://github.com/esc/conda-zsh-completion
+    npm
 )
 
 source $ZSH/oh-my-zsh.sh
