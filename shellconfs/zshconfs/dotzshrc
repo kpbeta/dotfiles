@@ -85,6 +85,9 @@ plugins=(
     aws
     vault
     vagrant
+    python
+    conda-zsh-completion # .oh-my-zsh/plugins...
+    # git clone https://github.com/esc/conda-zsh-completion
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -130,3 +133,20 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/MyApplications/dots/shellconfs/zshconfs/dotp10k.zsh.
 [[ ! -f ~/MyApplications/dots/shellconfs/zshconfs/dotp10k.zsh ]] || source ~/MyApplications/dots/shellconfs/zshconfs/dotp10k.zsh
+
+export MYAPP=/home/kal/MyApplications
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$MYAPP/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$MYAPP/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$MYAPP/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$MYAPP/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
