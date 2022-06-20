@@ -15,9 +15,12 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
 
     " -------------------- GUI Colors ----------------------
-    Plug 'powerline/powerline'
+    " Plug 'powerline/powerline'
     Plug 'ap/vim-css-color'
-    
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+
     " --------------------  GUI Functionality ------------------
     Plug 'preservim/nerdtree'
 

@@ -2,13 +2,3 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "shellconfs/tmuxconfs/dottmuxdir/plugins/tmux-power"]
-	path = shellconfs/tmuxconfs/dottmuxdir/plugins/tmux-power
-	url = https://github.com/wfxr/tmux-power.git
-	ignore = dirty
-[submodule "shellconfs/tmuxconfs/dottmuxdir/plugins/tmux-resurrect"]
-	path = shellconfs/tmuxconfs/dottmuxdir/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
-	ignore = dirty
-
-
