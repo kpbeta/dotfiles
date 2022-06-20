@@ -46,4 +46,3 @@ export GOPATH=$MYAPP/go-pkgs
 export PATH=$PATH:$HOME/MyApplications/android-studio/bin
 alias android="nohup studio > /dev/null &"
 
-source ~/.condarc
