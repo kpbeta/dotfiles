@@ -1,16 +1,15 @@
 set nocompatible 	" not vi compatible
 
 " ============= LEADER ================
-let mapleader = "\<Space>"	" <Leader>
-let localmapleader = "\\"		" <Local Leader>
+let mapleader = "\<Space>"	             " <Leader>
+let localmapleader = "\\"		        " <Local Leader>
 
 " ===== Basic universal configurations ================
-set nu rnu
-set mouse+=a 		" Enable mouse support
+set mouse+=a 		                    " Enable mouse support
 set splitbelow splitright
-set history=812		" More history
-" toggle relative numbering
-nnoremap <C-n> :set rnu!<CR> 
+set history=812		                    " More history
+set nu rnu
+nnoremap <C-n> :set rnu!<CR>         " toggle relative numbering
 
 " ======= SYNTAX and HIGHLIGHTS ========================
 syntax enable
