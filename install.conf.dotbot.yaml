@@ -12,6 +12,7 @@
     # ~/.plugins.vimrc: vimconfs/plugins.vimrc
 
     # SHELLS
+    ~/.commonshrc: shellconfs/shells.commonrc
     ~/.zshrc: shellconfs/zshconfs/dotzshrc
     ~/.bashrc: shellconfs/bashconfs/dotbashrc
     ~/.profile: shellconfs/shells.profile
