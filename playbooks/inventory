@@ -1,0 +1,9 @@
+# The Ansible inventory file defines the hosts and groups of hosts upon which commands,
+# modules, and tasks in a playbook operate. The file can be in one of many formats 
+# depending on your Ansible environment and plugins. Common formats include INI and YAML.
+
+# This is in INI
+
+[localhost]
+127.0.0.1  ansible_connection=local
+

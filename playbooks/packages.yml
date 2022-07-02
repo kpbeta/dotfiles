@@ -1,0 +1,35 @@
+# Run with `ansible-playbook <filename>`
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Install shell packages
+    become: true
+    apt:
+      state: latest
+      name:
+        - zsh
+        - tmux
+
+  - name: Install basic tools
+      state: latest
+      name:
+        - curl
+        - wget
+        - git
+
+  - name: Install tools
+      state: latest
+      name:
+        - htop
+        - tree
+        - net-tools
+
+
+# - hosts: localhost
+#   become: true
+#   tasks:
+#   - name: Install zsh
+#     ansible.builtin.apt:
+#       name: zsh
+#       state: latest
