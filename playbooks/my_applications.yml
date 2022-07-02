@@ -1,0 +1,21 @@
+---
+- name: Custom My Applications Setup
+  hosts: "localhost"
+  become: yes
+  become_user: kal
+  tasks:
+  - name: Creates directory
+    file:
+      path: $HOME/MyApplications
+      state: directory
+      owner: kal
+      group: kal
+      mode: 0775
+  - name: Clone git repos
+    git:
+      repo: git@github.com:kpbeta/dots.git
+      dest: $HOME/MyApplications/dotsasd/
+      clone: yes
+      update: yes
+
+
