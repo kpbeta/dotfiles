@@ -15,7 +15,8 @@ export EDITOR=vim
 # Add local installation directory
 export GOROOT=$MYAPP/go
 export GOPATH=$MYAPP/go/pkg
-export PATH=$GOROOT/bin:$PATH
+export GOBIN=$GOROOT/bin
+export PATH=$GOBIN:$PATH
 
 # Add Android Studio
 # export PATH=$PATH:$HOME/MyApplications/android-studio/bin
