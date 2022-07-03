@@ -9,6 +9,7 @@
       name:
         - zsh
         - tmux
+        - xclip     # For easy copy/paste in tmux
 
   - name: Install basic tools
     apt:
