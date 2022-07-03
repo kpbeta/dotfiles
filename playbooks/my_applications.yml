@@ -6,7 +6,7 @@
   tasks:
   - name: Creates directory
     file:
-      path: $HOME/MyApplications
+      path: $HOME/MyApplications/bin # MyApplications is created automatically
       state: directory
       owner: kal
       group: kal
@@ -14,8 +14,8 @@
   - name: Clone git repos
     git:
       repo: git@github.com:kpbeta/dots.git
-      dest: $HOME/MyApplications/dotsasd/
+      dest: $HOME/MyApplications/dots/
       clone: yes
-      update: yes
+      update: no  # Might not run for `dots` project if yes
 
 
