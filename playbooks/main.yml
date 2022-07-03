@@ -27,7 +27,6 @@
         - tree
         - net-tools
 
-
 # - hosts: localhost
 #   become: true
 #   tasks:
