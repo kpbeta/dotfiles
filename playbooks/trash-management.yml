@@ -26,17 +26,19 @@
       name:
         - trash-cli
 
-  - name: Remove /usr/bin/rm before linking trash-rm
-    file:
-      name: /usr/bin/rm
-      state: file
+  # REMOVING RM is harmful for other stuff
+  # Find other solution
+  # - name: Remove /usr/bin/rm before linking trash-rm
+  #   file:
+  #     name: /usr/bin/rm
+  #     state: file
 
-  - name: Symlink trash-put to rm
-    file:
-      src: /usr/bin/trash-put
-      dest: /usr/bin/rm
-      state: link
-      force: yes
+  # - name: Symlink trash-put to rm
+  #   file:
+  #     src: /usr/bin/trash-put
+  #     dest: /usr/bin/rm
+  #     state: link
+  #     force: yes
 
   - name: Symlink trash-put to tp 
     file:
