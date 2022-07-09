@@ -22,7 +22,6 @@ export PATH=$GOBIN:$PATH
 # export PATH=$PATH:$HOME/MyApplications/android-studio/bin
 # alias android="nohup studio > /dev/null &"
 
-
 # NVM - Node version manager >>>
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
