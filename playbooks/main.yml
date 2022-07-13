@@ -27,6 +27,13 @@
         - tree
         - net-tools
 
+  - name: Install editor, markdown, toos
+    apt:
+      state: latest
+      name:
+        - pandoc
+        - lynx
+  
 # - hosts: localhost
 #   become: true
 #   tasks:
