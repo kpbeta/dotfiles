@@ -530,3 +530,15 @@ The offending line appears to be:
 2022-07-13 13:26:48,634 p=17515 u=kal n=ansible | changed: [127.0.0.1]
 2022-07-13 13:26:48,648 p=17515 u=kal n=ansible | PLAY RECAP ***************************************************************************************************************************************************************************************************************************************************
 2022-07-13 13:26:48,648 p=17515 u=kal n=ansible | 127.0.0.1                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-07-15 01:24:30,210 p=377419 u=kal n=ansible | PLAY [localhost] ************************************************************************************
+2022-07-15 01:24:30,218 p=377419 u=kal n=ansible | TASK [Gathering Facts] ******************************************************************************
+2022-07-15 01:24:30,442 p=377419 u=kal n=ansible | fatal: [127.0.0.1]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2022-07-15 01:24:30,443 p=377419 u=kal n=ansible | PLAY RECAP ******************************************************************************************
+2022-07-15 01:24:30,443 p=377419 u=kal n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-07-15 01:24:38,379 p=377863 u=root n=ansible | PLAY [localhost] ************************************************************************************
+2022-07-15 01:24:38,385 p=377863 u=root n=ansible | TASK [Gathering Facts] ******************************************************************************
+2022-07-15 01:24:43,014 p=377863 u=root n=ansible | ok: [127.0.0.1]
+2022-07-15 01:24:43,029 p=377863 u=root n=ansible | TASK [Install ssh packages] *************************************************************************
+2022-07-15 01:24:50,599 p=377863 u=root n=ansible | changed: [127.0.0.1]
+2022-07-15 01:24:50,615 p=377863 u=root n=ansible | PLAY RECAP ******************************************************************************************
+2022-07-15 01:24:50,615 p=377863 u=root n=ansible | 127.0.0.1                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
