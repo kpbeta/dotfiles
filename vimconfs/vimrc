@@ -43,8 +43,8 @@ nnoremap ; :
 " ======= Experimental Settings =========
 inoremap kj <ESC>	" Added additional interactive mode <ESC>
 vnoremap kj <ESC>	" Added additional interactive mode <ESC>
-inoremap df <ESC>	" Added additional interactive mode <ESC>
-vnoremap df <ESC>	" Added additional interactive mode <ESC>
+inoremap fd <ESC>	" Added additional interactive mode <ESC>
+vnoremap fd <ESC>	" Added additional interactive mode <ESC>
 
 " VIM Whitespace - Added whitespaces
 " Using vim plugin for better spaces; Using this for just backup
