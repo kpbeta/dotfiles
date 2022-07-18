@@ -553,3 +553,20 @@ The offending line appears to be:
 2022-07-17 14:05:32,858 p=47120 u=root n=ansible | ok: [127.0.0.1]
 2022-07-17 14:05:32,874 p=47120 u=root n=ansible | PLAY RECAP ***********************************************************************************
 2022-07-17 14:05:32,874 p=47120 u=root n=ansible | 127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-07-18 11:59:19,734 p=563921 u=kal n=ansible | @all:
+  |--@localhost:
+  |  |--127.0.0.1
+  |--@ungrouped:
+2022-07-18 11:59:33,319 p=564267 u=root n=ansible | PLAY [localhost] ***********************************************************************************************
+2022-07-18 11:59:33,330 p=564267 u=root n=ansible | TASK [Gathering Facts] *****************************************************************************************
+2022-07-18 11:59:36,864 p=564267 u=root n=ansible | ok: [127.0.0.1]
+2022-07-18 11:59:36,878 p=564267 u=root n=ansible | TASK [Setup wireguard-tools] ***********************************************************************************
+2022-07-18 11:59:37,664 p=564267 u=root n=ansible | ok: [127.0.0.1]
+2022-07-18 11:59:37,673 p=564267 u=root n=ansible | TASK [Install tailscale] ***************************************************************************************
+2022-07-18 11:59:57,355 p=564267 u=root n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use command
+because get_url or uri is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-18 11:59:57,355 p=564267 u=root n=ansible | changed: [127.0.0.1]
+2022-07-18 11:59:57,371 p=564267 u=root n=ansible | PLAY RECAP *****************************************************************************************************
+2022-07-18 11:59:57,371 p=564267 u=root n=ansible | 127.0.0.1                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
