@@ -1,0 +1,10 @@
+# Do environment-management bootstrap here
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Setup direnv
+    apt:
+      state: latest
+      name:
+        - direnv

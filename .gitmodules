@@ -1,41 +1,4 @@
-[submodule "vimconfs/dotvim/pack/any_name/start/nerdtree"]
-	path = vimconfs/dotvim/pack/any_name/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/commentary"]
-	path = vimconfs/dotvim/pack/any_name/start/commentary
-	url = https://github.com/tpope/vim-commentary.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-surround"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-go"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-go
-	url = https://github.com/fatih/vim-go.git
-	ignore = dirty
-[submodule "vimconfs/dotvim/pack/any_name/start/lightline.vim"]
-	path = vimconfs/dotvim/pack/any_name/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
-	ignore = dirty
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vimconfs/awesome-vimrc"]
-	path = vimconfs/awesome-vimrc
-	url = https://github.com/amix/vimrc.git
-	ignore = dirty
-
-[submodule "vimconfs/dotvim/pack/any_name/start/fzf.vim"]
-	path = vimconfs/dotvim/pack/any_name/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
-[submodule "vimconfs/dotvim/pack/any_name/start/fzf"]
-	path = vimconfs/dotvim/pack/any_name/start/fzf
-	url = https://github.com/junegunn/fzf.git
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-better-whitespace"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule "vimconfs/dotvim/pack/any_name/start/vim-css-color"]
-	path = vimconfs/dotvim/pack/any_name/start/vim-css-color
-	url = https://github.com/ap/vim-css-color.git

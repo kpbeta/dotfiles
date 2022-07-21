@@ -25,3 +25,17 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# My local setup
+export MYAPP=$HOME/MyApplications
+
+# Add local installation directory
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$MYAPP/go-pkgs
+
+# Add Android Studio
+export PATH=$PATH:$MYAPP/android-studio/bin
+alias android="nohup studio > /dev/null &"
+
+
+

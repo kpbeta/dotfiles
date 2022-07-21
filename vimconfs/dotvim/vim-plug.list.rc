@@ -1,0 +1,50 @@
+" ============================================================================
+"   PLUGINS
+" We can source other vimrc for modularity using "source <filename>"
+" =============================================================================
+call plug#begin()
+
+    " --------------------  Autcompletion  ------------------
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Needs to run `yarn install` inside coc.nvim directory
+    " `npm install --location=global yarn` to install yarn
+
+
+    " ---------------------- Edit enhancmement ---------------
+    Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'               " Adds repeat thorugh . to other packages
+    Plug 'jiangmiao/auto-pairs'
+    
+    " ------------------------- Search -------------------------- 
+    Plug 'romainl/vim-cool'             " Disables highlight when search is done
+    Plug 'haya14busa/incsearch.vim'     " Better incremental search
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " FZF plugin, makes Ctrl-P unnecessary
+    Plug 'junegunn/fzf.vim'
+
+    " -------------------- GUI Colors ----------------------
+    " Plug 'powerline/powerline'
+    Plug 'ap/vim-css-color'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+
+    " --------------------  GUI Functionality ------------------
+    Plug 'preservim/nerdtree'
+
+    " ----------- Programming language support -----------------
+    Plug 'hashivim/vim-terraform'
+    Plug 'juliosueiras/vim-terraform-completion'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
+" if has('nvim-0.5')
+"    Plug 'phaazon/hop.nvim'
+
+ 
+call plug#end()
+
+
+" =========== EXT PLUGIN SOURCES ==================
+source ~/.vim/plugins.vimrc/NERDTree.vimrc    " NERDTree customizations
+source ~/.vim/plugins.vimrc/FZF.vimrc

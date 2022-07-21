@@ -1,24 +1,50 @@
-" Basic universal configurations
-set rnu
+set nocompatible 	" not vi compatible
 
-" Syntax and highlighting
+" ============= LEADER ================
+let mapleader = "\<Space>"	             " <Leader>
+let localmapleader = "\\"		        " <Local Leader>
+
+" ===== Basic universal configurations ================
+set mouse+=a 		                    " Enable mouse support
+set splitbelow splitright
+set history=812		                    " More history
+set nu rnu
+nnoremap <C-n> :set rnu!<CR>         " toggle relative numbering
+
+" ======= SYNTAX and HIGHLIGHTS ========================
 syntax enable
+"syntax on " This is similar to syntax enable - but overides color settings
 filetype plugin on " enables $HOME/.vim/ftplugin folder with .vim files
-" for filetype confugirations
-filetype indent on
+filetype indent on " This and above line might need fpdetect
+set autoindent
 
-" Enable mouse support
-set mouse=a
+" ============ TAB and INDENT ==========================
+set expandtab
+set tabstop=4 shiftwidth=4 softtabstop=4
 
-" ====== Custom Settings =======
-let mapleader = "\<Space>"	" <Leader>
-let mapleader = "\\"		" <Local Leader>
+" =========== SEARCHES =================================
+set ignorecase
+set smartcase
+set incsearch hls 	" incremental search and highlight search
+
+" ============= SPLITS AND WINDOWS ====================
+set splitbelow      " Set split to below
+set splitright      " Else splits to left
+
+" quicker window movement
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+" ============ COLONS SEMICOLONS ======================
+nnoremap ; :
 
 " ======= Experimental Settings =========
 inoremap kj <ESC>	" Added additional interactive mode <ESC>
 vnoremap kj <ESC>	" Added additional interactive mode <ESC>
-inoremap df <ESC>	" Added additional interactive mode <ESC>
-vnoremap df <ESC>	" Added additional interactive mode <ESC>
+inoremap fd <ESC>	" Added additional interactive mode <ESC>
+vnoremap fd <ESC>	" Added additional interactive mode <ESC>
 
 " VIM Whitespace - Added whitespaces
 " Using vim plugin for better spaces; Using this for just backup
@@ -28,9 +54,6 @@ vnoremap df <ESC>	" Added additional interactive mode <ESC>
 " Vim Commentary Plugin; Will add to go.vim
 " autocmd FileType go setlocal commentstring=#\ %s
 
-" ===== PLUGIN SOURCES ==================
-" We can source other vimrc for modularity using "source <filename>"
-" source $DOTS/vimconfs/NERDTree.vimrc
-source ~/.plugins.vimrc/NERDTree.vimrc
-
+" =========== PLUGINS ===================
+source ~/.vim/vim-plug.list.rc
 

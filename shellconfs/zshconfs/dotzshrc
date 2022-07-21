@@ -81,6 +81,15 @@ plugins=(
     git
     z
     python
+    terraform
+    aws
+    vault
+    vagrant
+    python
+    conda-zsh-completion # .oh-my-zsh/plugins...
+    # git clone https://github.com/esc/conda-zsh-completion
+    npm
+    ansible
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,5 +126,23 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+export MYAPP=$HOME/MyApplications
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$MYAPP/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$MYAPP/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$MYAPP/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$MYAPP/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 # To customize prompt, run `p10k configure` or edit ~/MyApplications/dots/shellconfs/zshconfs/p10k.zsh.
 [[ ! -f $MYAPP/dots/shellconfs/zshconfs/p10k.zsh ]] || source $MYAPP/dots/shellconfs/zshconfs/p10k.zsh
+
+source ~/.commonshrc

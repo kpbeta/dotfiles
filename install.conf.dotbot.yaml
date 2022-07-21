@@ -9,11 +9,17 @@
     # EDITORS
     ~/.vimrc: vimconfs/vimrc
     ~/.vim: vimconfs/dotvim
-    ~/.plugins.vimrc: vimconfs/plugins.vimrc
+    # ~/.plugins.vimrc: vimconfs/plugins.vimrc
 
     # SHELLS
+    ~/.commonshrc: shellconfs/shells.commonrc
     ~/.zshrc: shellconfs/zshconfs/dotzshrc
     ~/.bashrc: shellconfs/bashconfs/dotbashrc
+    ~/.profile: shellconfs/shells.profile
+    ~/.zprofile: shellconfs/zprofile
     ~/.p10k.zsh: shellconfs/zshconfs/dotp10k.zsh
     # TMUX
-    ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf 
+    ~/.tmux.conf: shellconfs/tmuxconfs/tmux.conf
+    ~/.tmux/plugins.tmuxrc: shellconfs/tmuxconfs/plugins.tmuxrc
+
+

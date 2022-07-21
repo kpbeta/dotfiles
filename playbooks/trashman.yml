@@ -1,0 +1,74 @@
+# Run with `ansible-playbook <filename>`
+#
+# CAVEAT: You can mess with rm. RESTORE USING:
+#
+# sudo touch /bin/rm && sudo chmod +x /bin/rm
+# apt-get download coreutils
+# sudo dpkg --unpack coreutils*
+
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Copy rm to another executable
+    copy:
+      src: /usr/bin/rm 
+      dest: /usr/bin/rm.original
+      mode: '1755'
+      owner: root
+      group: root
+      backup: yes
+      force: no     # Do not copy if already exists
+
+  - name: Install trash-cli
+    apt:
+      state: present
+      name:
+        - trash-cli
+
+  # REMOVING RM is harmful for other stuff
+  # Find other solution
+  # - name: Remove /usr/bin/rm before linking trash-rm
+  #   file:
+  #     name: /usr/bin/rm
+  #     state: file
+
+  # - name: Symlink trash-put to rm
+  #   file:
+  #     src: /usr/bin/trash-put
+  #     dest: /usr/bin/rm
+  #     state: link
+  #     force: yes
+
+  - name: Symlink trash-put to tp 
+    file:
+      src: /usr/bin/trash-put
+      dest: /usr/bin/tp
+      state: link
+      force: no
+
+  - name: Symlink trash-list to tl
+    file:
+      src: /usr/bin/trash-list
+      dest: /usr/bin/tl
+      state: link
+      force: no
+
+  - name: Symlink trash-list to trs
+    file:
+      src: /usr/bin/trash-restore
+      dest: /usr/bin/trs
+      state: link
+      force: no
+
+
+
+
+
+# - hosts: localhost
+#   become: true
+#   tasks:
+#   - name: Install zsh
+#     ansible.builtin.apt:
+#       name: zsh
+#       state: latest
