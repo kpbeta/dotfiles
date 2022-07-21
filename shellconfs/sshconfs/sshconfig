@@ -1,0 +1,28 @@
+Host pihome
+    Hostname <REDACTED>
+    PreferredAuthentications publickey
+    Port <LOCAL-PORT>
+    IdentityFile ~/.ssh/id_rsa
+    User <PIUSER>
+
+Host piaway
+    Hostname <REDACTED>
+    PreferredAuthentications publickey
+    Port <NON-LOCAL-PORT>
+    IdentityFile ~/.ssh/id_rsa
+    User <PIUSER>
+
+Host pitail
+    Hostname <REDACTED>
+    PreferredAuthentications publickey
+    Port <LOCAL-PORT>
+    IdentityFile ~/.ssh/id_rsa
+    User <PIUSER>
+
+Host zep
+   Hostname <REDACTED>
+   PreferredAuthentications publickey
+   Port <LOCAL-PORT>
+   IdentityFile ~/.ssh/id_rsa
+   User <REDACTED>
+   ProxyJump pitail
