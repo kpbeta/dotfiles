@@ -1,3 +1,8 @@
+# Source secrets file if present
+[ -f ~/.secretsrc ] && { source ~/.secretsrc }
+## Add alias for secure coding ctf
+alias securecoding="sshpass -p $CTFSPASS ssh -D 8123 -C -N tunneler@ctf.ini.cmu.edu"
+
 # VIM friendly setup
 # Use gnome-tweaks to use Caps-Lock as Ctrl
 # xcape (needs installing) to use Ctrl_L as escape
