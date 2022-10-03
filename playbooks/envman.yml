@@ -8,3 +8,5 @@
       state: latest
       name:
         - direnv
+        - conda
+        - nvm
