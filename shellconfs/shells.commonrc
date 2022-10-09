@@ -32,3 +32,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # <<< NVM complete <<<
+
+# Burp alias
+alias burp="nohup java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$MYAPP/BurpSuitePro/loader.jar -noverify -jar $MYAPP/BurpSuitePro/burpsuite_pro_v2022.8.5.jar > /dev/null 2>&1 & > /dev/null"
+

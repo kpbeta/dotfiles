@@ -597,3 +597,37 @@ because get_url or uri is insufficient you can add 'warn: false' to this command
 2022-10-02 11:56:50,797 p=44551 u=kal n=ansible | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Failed to init/update submodules: Submodule 'dotbot' (https://github.com/anishathalye/dotbot) registered for path 'dotbot'\nfatal: No url found for submodule path 'vimconfs/dotvim/plugged/coc.nvim' in .gitmodules\n"}
 2022-10-02 11:56:50,798 p=44551 u=kal n=ansible | PLAY RECAP *********************************************************************
 2022-10-02 11:56:50,798 p=44551 u=kal n=ansible | 127.0.0.1                  : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-10-09 02:51:25,027 p=12111 u=kal n=ansible | ERROR! the playbook: MyApplications/dots/playbooks/basics.yml could not be found
+2022-10-09 02:51:32,461 p=12121 u=kal n=ansible | PLAY [localhost] ******************************************************************
+2022-10-09 02:51:32,472 p=12121 u=kal n=ansible | TASK [Gathering Facts] ************************************************************
+2022-10-09 02:51:36,406 p=12121 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:51:36,427 p=12121 u=kal n=ansible | TASK [Install apt utilities] ******************************************************
+2022-10-09 02:52:11,021 p=12121 u=kal n=ansible | changed: [127.0.0.1]
+2022-10-09 02:52:11,032 p=12121 u=kal n=ansible | TASK [Install via shell scripts] **************************************************
+2022-10-09 02:52:14,315 p=12121 u=kal n=ansible | changed: [127.0.0.1]
+2022-10-09 02:52:14,326 p=12121 u=kal n=ansible | TASK [Creates directory] **********************************************************
+2022-10-09 02:52:14,578 p=12121 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:52:14,588 p=12121 u=kal n=ansible | TASK [Clone git repos] ************************************************************
+2022-10-09 02:52:15,715 p=12121 u=kal n=ansible | changed: [127.0.0.1]
+2022-10-09 02:52:15,734 p=12121 u=kal n=ansible | PLAY RECAP ************************************************************************
+2022-10-09 02:52:15,735 p=12121 u=kal n=ansible | 127.0.0.1                  : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-10-09 02:52:35,333 p=24212 u=kal n=ansible | PLAY [localhost] ******************************************************************
+2022-10-09 02:52:35,343 p=24212 u=kal n=ansible | TASK [Gathering Facts] ************************************************************
+2022-10-09 02:52:39,582 p=24212 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:52:39,603 p=24212 u=kal n=ansible | TASK [Install apt utilities] ******************************************************
+2022-10-09 02:52:40,275 p=24212 u=kal n=ansible | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "No package matching 'nvm' is available"}
+2022-10-09 02:52:40,276 p=24212 u=kal n=ansible | PLAY RECAP ************************************************************************
+2022-10-09 02:52:40,276 p=24212 u=kal n=ansible | 127.0.0.1                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-10-09 02:52:54,850 p=24379 u=kal n=ansible | PLAY [localhost] ******************************************************************
+2022-10-09 02:52:54,860 p=24379 u=kal n=ansible | TASK [Gathering Facts] ************************************************************
+2022-10-09 02:52:59,052 p=24379 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:52:59,073 p=24379 u=kal n=ansible | TASK [Install apt utilities] ******************************************************
+2022-10-09 02:53:02,627 p=24379 u=kal n=ansible | changed: [127.0.0.1]
+2022-10-09 02:53:02,639 p=24379 u=kal n=ansible | TASK [Install via shell scripts] **************************************************
+2022-10-09 02:53:05,351 p=24379 u=kal n=ansible | changed: [127.0.0.1]
+2022-10-09 02:53:05,362 p=24379 u=kal n=ansible | TASK [Creates directory] **********************************************************
+2022-10-09 02:53:05,613 p=24379 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:53:05,623 p=24379 u=kal n=ansible | TASK [Clone git repos] ************************************************************
+2022-10-09 02:53:06,303 p=24379 u=kal n=ansible | ok: [127.0.0.1]
+2022-10-09 02:53:06,325 p=24379 u=kal n=ansible | PLAY RECAP ************************************************************************
+2022-10-09 02:53:06,325 p=24379 u=kal n=ansible | 127.0.0.1                  : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
