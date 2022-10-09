@@ -1,0 +1,70 @@
+# Run with `ansible-playbook <filename>`
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Install shell packages
+    apt:
+      state: latest
+      name:
+        - zsh
+        - tmux
+        - xclip     # For easy copy/paste in tmux
+
+  - name: Install basic tools
+    apt:
+      state: latest
+      name:
+        - curl
+        - wget
+        - git
+
+  - name: Install tools
+    apt:
+      state: latest
+      name:
+        - htop
+        - tree
+        - net-tools
+
+  - name: Install editor, markdown, toos
+    apt:
+      state: latest
+      name:
+        - pandoc
+        - lynx
+  
+# - hosts: localhost
+#   become: true
+#   tasks:
+#   - name: Install zsh
+#     ansible.builtin.apt:
+#       name: zsh
+#       state: latest
+# Do environment-management bootstrap here
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Setup direnv
+    apt:
+      state: latest
+      name:
+        - direnv
+        - conda
+        - nvm
+# Do environment-management bootstrap here
+- hosts: ["localhost"]
+  become: true
+  become_user: root
+  tasks:
+  - name: Setup wireguard-tools
+    apt:
+      state: latest
+      name:
+        - wireguard-tools
+  - name: Install tailscale
+    shell:
+      cmd: curl -fsSL https://tailscale.com/install.sh | sh
+
+
