@@ -1,3 +1,7 @@
+# COLORS
+export LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
+
+
 # Source secrets file if present
 [ -f ~/.secretsrc ] && { source ~/.secretsrc }
 ## Add alias for secure coding ctf
