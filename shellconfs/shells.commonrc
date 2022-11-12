@@ -1,6 +1,10 @@
 # COLORS
 export LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
 
+x() {
+chmod +x $1
+./$1
+}
 
 # Source secrets file if present
 [ -f ~/.secretsrc ] && { source ~/.secretsrc }
@@ -26,6 +30,7 @@ export GOROOT=$MYAPP/go
 export GOPATH=$MYAPP/go/pkg
 export GOBIN=$GOROOT/bin
 export PATH=$GOBIN:$PATH
+[ -d "$MYAPP/GoLand" ] && export PATH=$PATH:$MYAPP/GoLand/bin
 
 # Add Android Studio
 # export PATH=$PATH:$HOME/MyApplications/android-studio/bin
@@ -40,3 +45,5 @@ export NVM_DIR="$HOME/.nvm"
 # Burp alias
 alias burp="nohup java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$MYAPP/BurpSuitePro/loader.jar -noverify -jar $MYAPP/BurpSuitePro/burpsuite_pro_v2022.8.5.jar > /dev/null 2>&1 & > /dev/null"
 
+alias o="xdg-'open"
+alias docker="sudo docker"
