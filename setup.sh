@@ -12,9 +12,9 @@ python3 /tmp/get-pip.py --user
 python3 -m pip install --user ansible
 
 # Clone dotfiles
-![ -d "~/MyApplications" ] && mkdir ~/MyApplications
+! [ -d "~/MyApplications" ] && mkdir ~/MyApplications
 cd ~/MyApplications
-![ -d "~/MyApplications/dotfiles" ] && git clone https://github.com/kpbeta/dots dotfiles
+! [ -d "~/MyApplications/dotfiles" ] && git clone https://github.com/kpbeta/dots dotfiles
 
 # Ansible get playbook
 ansible-playbook ~/MyApplications/dotfiles/playbooks/all.yaml
