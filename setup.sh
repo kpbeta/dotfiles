@@ -2,8 +2,7 @@
 # curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/kpbeta/dots/main/setup.sh | sh 
 # curl https://raw.githubusercontent.com/kpbeta/dots/main/setup.sh | sh 
 
-sudo apt update -y
-sudo apt upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 
 # Install python and ansible
 sudo apt install python3 curl git

@@ -17,6 +17,7 @@
       url: https://gist.githubusercontent.com/kpbeta/39cc785da0898096f2e3d38b2c344359/raw/e856dd98e24427ba0d48729ac17a03ad23456021/default-zshrc
       dest: $HOME/.zshrc
       mode: '0440'
+
   - name: Install shell utilities w/ apt
     apt:
       state: latest
@@ -40,6 +41,7 @@
         - ripgrep
         - fd-find # alternative to find
         # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
+
   - name: Set environment managers (direnv, npm, conda)
     apt:
       state: latest
@@ -52,6 +54,7 @@
       creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
     # shell:
     #   cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  
   - name: Install utilities (htop, tree, pstree, etc.)
     apt:
       state: latest
