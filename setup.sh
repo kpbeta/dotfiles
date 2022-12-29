@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/krparajuli/dotfiles/main/setup.sh | sh 
+# curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/kpbeta/dots/main/setup.sh | sh 
 
 
 sudo apt update -y
