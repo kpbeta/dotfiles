@@ -83,12 +83,14 @@
         - pandoc
         - lynx
 
-  - name: Creates MyApplications and bin directory 
+  - name: Creates directory
+    become_user: kal
+    become: "{{ ansible_user }}"
     file:
-      path: ~/MyApplications/bin # MyApplications is created automatically
+      path: $HOME/MyApplications/bin # MyApplications is created automatically
       state: directory
-      owner: kal
-      group: kal
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
       mode: 0775
   # - name: Clone git repos
   #   git:
