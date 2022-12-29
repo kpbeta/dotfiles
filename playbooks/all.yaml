@@ -35,6 +35,11 @@
         - wget
         - git
         - bat
+        - exa # ls alternative (also lsd)
+        - zoxide # z (alternative to cd)
+        - ripgrep
+        - fd-find # alternative to find
+        # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
   - name: Set environment managers (direnv, npm, conda)
     apt:
       state: latest
