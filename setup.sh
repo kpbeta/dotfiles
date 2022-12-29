@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+# curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/krparajuli/dotfiles/main/setup.sh | sh 
+
 
 sudo apt update -y
 sudo apt upgrade -y
