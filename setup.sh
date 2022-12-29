@@ -17,7 +17,7 @@ cd ~/MyApplications
 ! [ -d "~/MyApplications/dotfiles" ] && \
 git clone https://github.com/kpbeta/dots dotfiles
 [ -d "~/MyApplications/dotfiles" ] && cd ~/MyApplications/dotfiles && \
-git clone https://github.com/kpbeta/dots dotfiles
+git clone git@github.com:kpbeta/dots.git dotfiles
 
 # Ansible get playbook
 ansible-galaxy collection install community.general
