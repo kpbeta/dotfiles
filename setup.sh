@@ -17,4 +17,4 @@ cd ~/MyApplications
 ! [ -d "~/MyApplications/dotfiles" ] && git clone https://github.com/kpbeta/dots dotfiles
 
 # Ansible get playbook
-ansible-playbook ~/MyApplications/dotfiles/playbooks/all.yaml
+ansible-playbook -i ~/MyApplications/dotfiles/playbooks/inventory.ini ~/MyApplications/dotfiles/playbooks/all.yaml
