@@ -20,5 +20,6 @@ git clone https://github.com/kpbeta/dots dotfiles
 git clone https://github.com/kpbeta/dots dotfiles
 
 # Ansible get playbook
+ansible-galaxy collection install community.general
 ansible-playbook -i ~/MyApplications/dotfiles/playbooks/inventory.ini \
 ~/MyApplications/dotfiles/playbooks/all.yaml
