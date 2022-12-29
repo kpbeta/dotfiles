@@ -34,6 +34,7 @@
         - curl
         - wget
         - git
+        - bat
   - name: Set environment managers (direnv, npm, conda)
     apt:
       state: latest
@@ -50,6 +51,7 @@
         - tree
         - net-tools
         - psmisc
+        - trash-cli
   - name: Install VM techs
     apt:
       state: latest
@@ -71,7 +73,7 @@
 
   - name: Creates MyApplications and bin directory 
     file:
-      path: $HOME/MyApplications/bin # MyApplications is created automatically
+      path: ~/MyApplications/bin # MyApplications is created automatically
       state: directory
       owner: kal
       group: kal
