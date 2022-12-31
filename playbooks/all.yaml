@@ -36,12 +36,15 @@
         - wget
         - git
         - bat
-        - exa # ls alternative (also lsd)
-        - zoxide # z (alternative to cd)
-        - ripgrep
-        - fd-find # alternative to find
+     
         # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
-
+# - name: Install linux cargo packages
+#   community.general.cargo:
+#     name:
+#     - exa # ls alternative (also lsd)
+#     - zoxide # z (alternative to cd)
+#     - ripgrep
+#     - fd-find # alternative to find
   - name: Set environment managers (direnv, npm, conda)
     apt:
       state: latest
@@ -82,6 +85,13 @@
     register: r
   - name: See Rust installations
     debug: var=r.stdout_lines
+  - name: Softlink cargo
+    ansible.builtin.file:
+      src: /usr/lib/cargo
+      dest: /usr/bin/cargo
+      owner: root
+      group: root
+      state: link
  
 
 

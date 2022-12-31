@@ -1,0 +1,10 @@
+- hosts: ["localhost"]
+  become: true
+  tasks:
+  - name: Install linux cargo packages
+    community.general.cargo:
+      name:
+        - exa # ls alternative (also lsd)
+        - zoxide # z (alternative to cd)
+        - ripgrep
+        - fd-find # alternative to find

@@ -2497,3 +2497,115 @@ The offending line appears to be:
 2022-12-31 00:18:40,365 p=14163 u=kal n=ansible | changed: [krpz]
 2022-12-31 00:18:40,393 p=14163 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
 2022-12-31 00:18:40,393 p=14163 u=kal n=ansible | krpz                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-12-31 00:41:44,496 p=20388 u=kal n=ansible | [WARNING]: While constructing a mapping from /home/kal/MyApplications/dotfiles/playbooks/test.yaml, line 4, column 5, found a duplicate dict key
+(name). Using last defined value only.
+
+2022-12-31 00:41:44,545 p=20388 u=kal n=ansible | ERROR! The field 'name' is supposed to be a string type, however the incoming data structure is a <class 'ansible.parsing.yaml.objects.AnsibleSequence'>
+
+The error appears to be in '/home/kal/MyApplications/dotfiles/playbooks/test.yaml': line 4, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+  - name: Install linux cargo packages
+    ^ here
+
+2022-12-31 00:42:19,389 p=20439 u=kal n=ansible | [WARNING]: While constructing a mapping from /home/kal/MyApplications/dotfiles/playbooks/test.yaml, line 4, column 5, found a duplicate dict key
+(name). Using last defined value only.
+
+2022-12-31 00:42:19,432 p=20439 u=kal n=ansible | PLAY [localhost] *************************************************************************************************************************************
+2022-12-31 00:42:19,458 p=20439 u=kal n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2022-12-31 00:42:23,473 p=20439 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:42:23,496 p=20439 u=kal n=ansible | TASK [exa] *******************************************************************************************************************************************
+2022-12-31 00:42:23,671 p=20439 u=kal n=ansible | fatal: [krpz]: FAILED! => {"changed": false, "msg": "missing required arguments: name"}
+2022-12-31 00:42:23,672 p=20439 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2022-12-31 00:42:23,672 p=20439 u=kal n=ansible | krpz                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-31 00:42:47,930 p=20642 u=kal n=ansible | PLAY [localhost] *************************************************************************************************************************************
+2022-12-31 00:42:47,955 p=20642 u=kal n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2022-12-31 00:42:51,951 p=20642 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:42:51,972 p=20642 u=kal n=ansible | TASK [Install linux cargo packages] ******************************************************************************************************************
+2022-12-31 00:42:52,144 p=20642 u=kal n=ansible | fatal: [krpz]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"cargo\" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"}
+2022-12-31 00:42:52,144 p=20642 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2022-12-31 00:42:52,144 p=20642 u=kal n=ansible | krpz                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-31 00:43:40,744 p=20845 u=kal n=ansible | PLAY [localhost] *************************************************************************************************************************************
+2022-12-31 00:43:40,769 p=20845 u=kal n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2022-12-31 00:43:44,843 p=20845 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:43:44,866 p=20845 u=kal n=ansible | TASK [Install linux cargo packages] ******************************************************************************************************************
+2022-12-31 00:43:45,034 p=20845 u=kal n=ansible | fatal: [krpz]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"cargo\" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"}
+2022-12-31 00:43:45,035 p=20845 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2022-12-31 00:43:45,035 p=20845 u=kal n=ansible | krpz                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-31 00:47:19,174 p=21341 u=kal n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/kal/MyApplications/dotfiles/playbooks/all.yaml': line 48, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - fd-find # alternative to find
+  - name: Set environment managers (direnv, npm, conda)
+  ^ here
+
+2022-12-31 00:47:35,397 p=21372 u=kal n=ansible | PLAY [localhost] *************************************************************************************************************************************
+2022-12-31 00:47:35,405 p=21372 u=kal n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2022-12-31 00:47:39,331 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:39,352 p=21372 u=kal n=ansible | TASK [Install shell utilities w/ apt] ****************************************************************************************************************
+2022-12-31 00:47:40,483 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:40,491 p=21372 u=kal n=ansible | TASK [Ensure the user has a zsh shell.] **************************************************************************************************************
+2022-12-31 00:47:40,710 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:40,717 p=21372 u=kal n=ansible | TASK [Download default .zshrc] ***********************************************************************************************************************
+2022-12-31 00:47:48,375 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:48,403 p=21372 u=kal n=ansible | TASK [Install shell utilities w/ apt] ****************************************************************************************************************
+2022-12-31 00:47:49,451 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:49,460 p=21372 u=kal n=ansible | TASK [Install other utilities (wget, curl, git, etc.)] ***********************************************************************************************
+2022-12-31 00:47:50,527 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:50,535 p=21372 u=kal n=ansible | TASK [Set environment managers (direnv, npm, conda)] *************************************************************************************************
+2022-12-31 00:47:51,575 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:51,584 p=21372 u=kal n=ansible | TASK [Install NVM] ***********************************************************************************************************************************
+2022-12-31 00:47:51,770 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:51,778 p=21372 u=kal n=ansible | TASK [Install utilities (htop, tree, pstree, etc.)] **************************************************************************************************
+2022-12-31 00:47:52,869 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:52,878 p=21372 u=kal n=ansible | TASK [Install VM techs] ******************************************************************************************************************************
+2022-12-31 00:47:53,952 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:53,960 p=21372 u=kal n=ansible | TASK [Download Rust] *********************************************************************************************************************************
+2022-12-31 00:47:59,251 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:47:59,259 p=21372 u=kal n=ansible | TASK [Install Rust] **********************************************************************************************************************************
+2022-12-31 00:48:01,090 p=21372 u=kal n=ansible | changed: [krpz]
+2022-12-31 00:48:01,103 p=21372 u=kal n=ansible | TASK [See Rust installations] ************************************************************************************************************************
+2022-12-31 00:48:01,125 p=21372 u=kal n=ansible | ok: [krpz] => {
+    "r.stdout_lines": [
+        "",
+        "  stable-x86_64-unknown-linux-gnu unchanged - rustc 1.66.0 (69f9c33d7 2022-12-12)",
+        "",
+        "",
+        "Rust is installed now. Great!",
+        "",
+        "To get started you may need to restart your current shell.",
+        "This would reload your PATH environment variable to include",
+        "Cargo's bin directory ($HOME/.cargo/bin).",
+        "",
+        "To configure your current shell, run:",
+        "source \"$HOME/.cargo/env\""
+    ]
+}
+2022-12-31 00:48:01,138 p=21372 u=kal n=ansible | TASK [Softlink cargo] ********************************************************************************************************************************
+2022-12-31 00:48:01,319 p=21372 u=kal n=ansible | changed: [krpz]
+2022-12-31 00:48:01,327 p=21372 u=kal n=ansible | TASK [Install tailscale] *****************************************************************************************************************************
+2022-12-31 00:48:10,118 p=21372 u=kal n=ansible | changed: [krpz]
+2022-12-31 00:48:10,127 p=21372 u=kal n=ansible | TASK [Install editor, markdown tools, etc. (pandoc, lynx, etc.)] *************************************************************************************
+2022-12-31 00:48:11,205 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:48:11,213 p=21372 u=kal n=ansible | TASK [Creates directory] *****************************************************************************************************************************
+2022-12-31 00:48:11,301 p=21372 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:48:11,328 p=21372 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2022-12-31 00:48:11,328 p=21372 u=kal n=ansible | krpz                       : ok=17   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-12-31 00:48:14,736 p=22897 u=kal n=ansible | PLAY [localhost] *************************************************************************************************************************************
+2022-12-31 00:48:14,761 p=22897 u=kal n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2022-12-31 00:48:18,709 p=22897 u=kal n=ansible | ok: [krpz]
+2022-12-31 00:48:18,731 p=22897 u=kal n=ansible | TASK [Install linux cargo packages] ******************************************************************************************************************
+2022-12-31 00:48:18,899 p=22897 u=kal n=ansible | fatal: [krpz]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"cargo\" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"}
+2022-12-31 00:48:18,899 p=22897 u=kal n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2022-12-31 00:48:18,899 p=22897 u=kal n=ansible | krpz                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
