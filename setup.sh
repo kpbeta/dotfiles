@@ -5,10 +5,17 @@
 sudo apt update -y && sudo apt upgrade -y
 
 # Install python and ansible
-sudo apt install python3 curl git
+sudo apt install -y python3 python2 curl git\
+ python-pexpect python3-pexpect python3-setuptools python-setuptools \
+ python-pip python3-pip
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 python3 /tmp/get-pip.py --user
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip2.py
+python2 /tmp/get-pip2.py
+
 python3 -m pip install --user ansible
+python2 -m pip install --upgrade pip
+# python2 -m pip install pexpect
 
 # Clone dotfiles
 ! [ -d "~/MyApplications" ] && mkdir ~/MyApplications

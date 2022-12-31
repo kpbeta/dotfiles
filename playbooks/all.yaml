@@ -2,96 +2,100 @@
   become: true
   # become_pass: <PASSWORD> # Else ansible.legacy.setup error
   tasks:
-  - name: Install shell utilities w/ apt
-    apt:
-      state: latest
-      name:
-        - zsh
-  - name: Ensure the user has a zsh shell.
-    user:
-      name: "{{ ansible_user }}"
-      shell: /usr/bin/zsh
-      state: present
-  - name: Download default .zshrc
-    ansible.builtin.get_url:
-      url: https://gist.githubusercontent.com/kpbeta/39cc785da0898096f2e3d38b2c344359/raw/e856dd98e24427ba0d48729ac17a03ad23456021/default-zshrc
-      dest: $HOME/.zshrc
-      mode: '0440'
+  # - name: Install shell utilities w/ apt
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - zsh
+  # - name: Ensure the user has a zsh shell.
+  #   user:
+  #     name: "{{ ansible_user }}"
+  #     shell: /usr/bin/zsh
+  #     state: present
+  # - name: Download default .zshrc
+  #   ansible.builtin.get_url:
+  #     url: https://gist.githubusercontent.com/kpbeta/39cc785da0898096f2e3d38b2c344359/raw/e856dd98e24427ba0d48729ac17a03ad23456021/default-zshrc
+  #     dest: $HOME/.zshrc
+  #     mode: '0440'
 
-  - name: Install shell utilities w/ apt
-    apt:
-      state: latest
-      name:
-        - tmux
-        - xclip
-        - xcape
-        - openssh-server
-  - name: Install other utilities (wget, curl, git, etc.)
-    apt:
-      state: latest
-      name:
-        - python3
-        - python2
-        - curl
-        - wget
-        - git
-        - bat
-        - exa # ls alternative (also lsd)
-        - zoxide # z (alternative to cd)
-        - ripgrep
-        - fd-find # alternative to find
-        # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
+  # - name: Install shell utilities w/ apt
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - tmux
+  #       - xclip
+  #       - xcape
+  #       - openssh-server
+  # - name: Install other utilities (wget, curl, git, etc.)
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - python3
+  #       - python2
+  #       - curl
+  #       - wget
+  #       - git
+  #       - bat
+  #       - exa # ls alternative (also lsd)
+  #       - zoxide # z (alternative to cd)
+  #       - ripgrep
+  #       - fd-find # alternative to find
+  #       # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
 
-  - name: Set environment managers (direnv, npm, conda)
-    apt:
-      state: latest
-      name:
-        - direnv
-  - name: Install NVM
-    ansible.builtin.shell: >
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-    args:
-      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-    # shell:
-    #   cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  # - name: Set environment managers (direnv, npm, conda)
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - direnv
+  # - name: Install NVM
+  #   ansible.builtin.shell: >
+  #     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  #   args:
+  #     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  #   # shell:
+  #   #   cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
   
-  - name: Install utilities (htop, tree, pstree, etc.)
-    apt:
-      state: latest
-      name:
-        - htop
-        - tree
-        - net-tools
-        - psmisc
-        - trash-cli
-  - name: Install VM techs
-    apt:
-      state: latest
-      name:
-        - vagrant
-        - docker.io
-  # - name: Install Rust
-  #   shell:
-  #     cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  - name: Install tailscale
-    shell: 
-      cmd: curl -fsSL https://tailscale.com/install.sh | sh
-  - name: Install editor, markdown tools, etc. (pandoc, lynx, etc.)
-    apt:
-      state: latest
-      name:
-        - pandoc
-        - lynx
+  # - name: Install utilities (htop, tree, pstree, etc.)
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - htop
+  #       - tree
+  #       - net-tools
+  #       - psmisc
+  #       - trash-cli
+  # - name: Install VM techs
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - vagrant
+  #       - docker.io
 
-  - name: Creates directory
-    become_user: kal
-    become: "{{ ansible_user }}"
-    file:
-      path: $HOME/MyApplications/bin # MyApplications is created automatically
-      state: directory
-      owner: "{{ ansible_user }}"
-      group: "{{ ansible_user }}"
-      mode: 0775
+  - name: Install Rust
+    ansible.builtin.expect:
+      command: curl https://sh.rustup.rs | sh
+      responses:
+        Question:
+          - "1"
+  # - name: Install tailscale
+  #   shell: 
+  #     cmd: curl -fsSL https://tailscale.com/install.sh | sh
+  # - name: Install editor, markdown tools, etc. (pandoc, lynx, etc.)
+  #   apt:
+  #     state: latest
+  #     name:
+  #       - pandoc
+  #       - lynx
+
+  # - name: Creates directory
+  #   become_user: kal
+  #   become: "{{ ansible_user }}"
+  #   file:
+  #     path: $HOME/MyApplications/bin # MyApplications is created automatically
+  #     state: directory
+  #     owner: "{{ ansible_user }}"
+  #     group: "{{ ansible_user }}"
+  #     mode: 0775
   # - name: Clone git repos
   #   git:
   #     # repo: git@github.com:kpbeta/dots.git
