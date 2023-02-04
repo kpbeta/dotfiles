@@ -5,8 +5,7 @@
 sudo apt update -y && sudo apt upgrade -y
 
 # Install python and ansible
-sudo apt install -y python3 python2 curl git\
- python-pip python3-pip
+sudo apt install -y python3 curl git
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 python3 /tmp/get-pip.py --user
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip2.py
