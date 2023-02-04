@@ -96,6 +96,7 @@
     apt:
       state: latest
       name:
+        - vim
         - pandoc
         - lynx
 
@@ -116,4 +117,7 @@
   #     update: yes
   #     depth: 1
 
+  - name: Install Surfshark
+    shell:
+      cmd: curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
 
