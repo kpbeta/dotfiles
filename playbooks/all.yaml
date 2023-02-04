@@ -78,12 +78,6 @@
   # Savior: https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
     shell:
       cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  
-  - name: Install snap modules
-    snap:
-      name:
-        - bitwarden
-        - spotify
 
   # - name: Softlink cargo
   #   ansible.builtin.file:
@@ -123,6 +117,13 @@
   #     update: yes
   #     depth: 1
 
+  
+  - name: Install snap modules
+    snap:
+      name:
+        - bitwarden
+        - spotify
+        
   - name: Install Surfshark
     shell:
       cmd: curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
