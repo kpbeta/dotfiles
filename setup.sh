@@ -22,7 +22,7 @@ git clone https://github.com/kpbeta/dotfiles.git
 [ -d "~/MyApplications/dotfiles" ] && cd ~/MyApplications/dotfiles && \
 git pull origin main
 
-PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 # Ansible get playbook
 ansible-galaxy collection install community.general
 ansible-playbook -i ~/MyApplications/dotfiles/playbooks/inventory.ini \
