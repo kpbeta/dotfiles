@@ -79,19 +79,19 @@
       url: https://sh.rustup.rs
       dest: /tmp/rustup.rs
       mode: '0774'
-  - name: Install Rust
-    shell:
-      cmd: /tmp/rustup.rs -y
-    register: r
-  - name: See Rust installations
-    debug: var=r.stdout_lines
-  - name: Softlink cargo
-    ansible.builtin.file:
-      src: /usr/lib/cargo
-      dest: /usr/bin/cargo
-      owner: root
-      group: root
-      state: link
+  # - name: Install Rust
+  #   shell:
+  #     cmd: /tmp/rustup.rs -y
+  #   register: r
+  # - name: See Rust installations
+  #   debug: var=r.stdout_lines
+  # - name: Softlink cargo
+  #   ansible.builtin.file:
+  #     src: /usr/lib/cargo
+  #     dest: /usr/bin/cargo
+  #     owner: root
+  #     group: root
+      # state: link
  
 
 
