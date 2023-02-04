@@ -78,7 +78,14 @@
   # Savior: https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
     shell:
       cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-   
+  
+  - name: Install snap modules
+    snap:
+      name:
+        state: latest
+        - bitwarden
+        - spotify
+
   # - name: Softlink cargo
   #   ansible.builtin.file:
   #     src: /usr/lib/cargo
