@@ -5,14 +5,14 @@
 sudo apt update -y && sudo apt upgrade -y
 
 # Install python and ansible
-sudo apt install -y python3 curl git
+sudo apt install -y python3 python2 curl git # python-pip python3-pip
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 python3 /tmp/get-pip.py --user
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip2.py
-python2 /tmp/get-pip2.py
+# curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip2.py
+# python2 /tmp/get-pip2.py
 
 python3 -m pip install --user ansible
-python2 -m pip install --upgrade pip
+# python2 -m pip install --upgrade pip
 
 # Clone dotfiles
 ! [ -d "~/MyApplications" ] && mkdir ~/MyApplications
@@ -22,6 +22,7 @@ git clone https://github.com/kpbeta/dotfiles.git
 [ -d "~/MyApplications/dotfiles" ] && cd ~/MyApplications/dotfiles && \
 git pull origin main
 
+PATH=$HOME/.local/bin:$PATH
 # Ansible get playbook
 ansible-galaxy collection install community.general
 ansible-playbook -i ~/MyApplications/dotfiles/playbooks/inventory.ini \
