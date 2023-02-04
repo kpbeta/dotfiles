@@ -81,7 +81,6 @@
   
   - name: Install snap modules
     snap:
-      state: present
       name:
         - bitwarden
         - spotify
