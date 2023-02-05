@@ -126,4 +126,11 @@
   - name: Install Surfshark
     shell:
       cmd: curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
-
+  - name: Generate SSH key id_rsa_main
+    become_user: "{{ansible_user}}"
+    openssh_keypair:
+      path: "$HOME/.ssh/id_rsa_main"
+      type: rsa
+      size: 4096
+      state: present
+      force: no
