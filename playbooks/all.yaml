@@ -127,6 +127,7 @@
   - name: Install Surfshark
     shell:
       cmd: curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
+
   - name: Generate SSH key id_rsa_main
     become_user: "{{ansible_user}}"
     openssh_keypair:
@@ -135,3 +136,7 @@
       size: 4096
       state: present
       force: no
+
+  - name: Set git global configs
+    shell:
+      cmd: git config --global user.name "Kalyan Parajuli"; git config --global user.email "kalyanranjanp@gmail.com"; git config --global core.editor vim; git --global config pull.rebase false; git config --global push.autoSetupRemote true
