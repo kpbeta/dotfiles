@@ -36,7 +36,14 @@
         - wget
         - git
         - bat
-     
+  - name: Install require packages like gcc, make, cmake, etc
+    apt:
+      state: latest
+      name: 
+        - gcc
+        - g++
+        - make
+        - cmake 
         # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
 # - name: Install linux cargo packages
 #   community.general.cargo:
@@ -67,6 +74,7 @@
         - net-tools
         - psmisc
         - trash-cli
+        - gnome-sushi
   - name: Install VM techs
     apt:
       state: latest
@@ -74,24 +82,24 @@
         - vagrant
         - docker.io
 
+
+  ######### RUST SETUP
   - name: Install Rust
   # Savior: https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
     shell:
-      cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      cmd: which rustc; [[ ! $? -eq 0 ]] && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  - name: Softlink Cargo
+    ansible.builtin.file:
+      src: /usr/lib/cargo
+      dest: /usr/bin/cargo
+      owner: root
+      group: root
+      state: link
 
-  # - name: Softlink cargo
-  #   ansible.builtin.file:
-  #     src: /usr/lib/cargo
-  #     dest: /usr/bin/cargo
-  #     owner: root
-  #     group: root
-      # state: link
- 
-
-
+  ########## TAILSCALE
   - name: Install tailscale
     shell: 
-      cmd: curl -fsSL https://tailscale.com/install.sh | sh
+      cmd: which tailscale; [[ ! $? -eq 0 ]] &&  curl -fsSL https://tailscale.com/install.sh | sh
   - name: Install editor, markdown tools, etc. (pandoc, lynx, etc.)
     apt:
       state: latest
@@ -126,7 +134,10 @@
         
   - name: Install Surfshark
     shell:
-      cmd: curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
+      cmd: |
+        which surfshark; [[ ! $? -eq 0 ]] && \
+        curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && \
+        sh /tmp/surfshark-install.sh
 
   - name: Generate SSH key id_rsa_main
     become_user: "{{ansible_user}}"

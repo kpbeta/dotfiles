@@ -2736,3 +2736,47 @@ community.general.plugins.module_utils.cmd_runner.CmdRunner instead. This featur
 2023-02-04 21:52:03,906 p=24207 u=kal n=ansible | changed: [krpz]
 2023-02-04 21:52:03,938 p=24207 u=kal n=ansible | PLAY RECAP ********************************************************************************************************************************
 2023-02-04 21:52:03,938 p=24207 u=kal n=ansible | krpz                       : ok=18   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-04 21:56:57,860 p=28855 u=kal n=ansible | PLAY [localhost] **************************************************************************************************************************
+2023-02-04 21:56:57,868 p=28855 u=kal n=ansible | TASK [Gathering Facts] ********************************************************************************************************************
+2023-02-04 21:57:00,541 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:00,561 p=28855 u=kal n=ansible | TASK [Install shell utilities w/ apt] *****************************************************************************************************
+2023-02-04 21:57:01,464 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:01,472 p=28855 u=kal n=ansible | TASK [Ensure the user has a zsh shell.] ***************************************************************************************************
+2023-02-04 21:57:01,703 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:01,710 p=28855 u=kal n=ansible | TASK [Download default .zshrc] ************************************************************************************************************
+2023-02-04 21:57:02,479 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:02,492 p=28855 u=kal n=ansible | TASK [Install shell utilities w/ apt] *****************************************************************************************************
+2023-02-04 21:57:03,344 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:03,352 p=28855 u=kal n=ansible | TASK [Install other utilities (wget, curl, git, etc.)] ************************************************************************************
+2023-02-04 21:57:04,179 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:04,187 p=28855 u=kal n=ansible | TASK [Install require packages like gcc, make, cmake, etc] ********************************************************************************
+2023-02-04 21:57:08,967 p=28855 u=kal n=ansible | changed: [krpz]
+2023-02-04 21:57:08,974 p=28855 u=kal n=ansible | TASK [Set environment managers (direnv, npm, conda)] **************************************************************************************
+2023-02-04 21:57:09,732 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:09,740 p=28855 u=kal n=ansible | TASK [Install NVM] ************************************************************************************************************************
+2023-02-04 21:57:09,921 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:09,928 p=28855 u=kal n=ansible | TASK [Install utilities (htop, tree, pstree, etc.)] ***************************************************************************************
+2023-02-04 21:57:10,699 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:10,707 p=28855 u=kal n=ansible | TASK [Install VM techs] *******************************************************************************************************************
+2023-02-04 21:57:11,466 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:11,473 p=28855 u=kal n=ansible | TASK [Install Rust] ***********************************************************************************************************************
+2023-02-04 21:57:13,741 p=28855 u=kal n=ansible | changed: [krpz]
+2023-02-04 21:57:13,751 p=28855 u=kal n=ansible | TASK [Install tailscale] ******************************************************************************************************************
+2023-02-04 21:57:17,761 p=28855 u=kal n=ansible | changed: [krpz]
+2023-02-04 21:57:17,769 p=28855 u=kal n=ansible | TASK [Install editor, markdown tools, etc. (pandoc, lynx, etc.)] **************************************************************************
+2023-02-04 21:57:18,566 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:18,574 p=28855 u=kal n=ansible | TASK [Creates directory] ******************************************************************************************************************
+2023-02-04 21:57:18,763 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:18,770 p=28855 u=kal n=ansible | TASK [Install snap modules] ***************************************************************************************************************
+2023-02-04 21:57:18,986 p=28855 u=kal n=ansible | [DEPRECATION WARNING]: The CmdMixin used in classes CmdModuleHelper and CmdStateModuleHelper is being deprecated. Modules should use 
+community.general.plugins.module_utils.cmd_runner.CmdRunner instead. This feature will be removed from community.general in version 8.0.0.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2023-02-04 21:57:18,986 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:18,993 p=28855 u=kal n=ansible | TASK [Install Surfshark] ******************************************************************************************************************
+2023-02-04 21:57:30,557 p=28855 u=kal n=ansible | changed: [krpz]
+2023-02-04 21:57:30,564 p=28855 u=kal n=ansible | TASK [Generate SSH key id_rsa_main] *******************************************************************************************************
+2023-02-04 21:57:30,777 p=28855 u=kal n=ansible | ok: [krpz]
+2023-02-04 21:57:30,784 p=28855 u=kal n=ansible | TASK [Set git global configs] *************************************************************************************************************
+2023-02-04 21:57:30,882 p=28855 u=kal n=ansible | changed: [krpz]
+2023-02-04 21:57:30,908 p=28855 u=kal n=ansible | PLAY RECAP ********************************************************************************************************************************
+2023-02-04 21:57:30,909 p=28855 u=kal n=ansible | krpz                       : ok=19   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
