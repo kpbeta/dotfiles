@@ -161,6 +161,15 @@
       state: present
       force: no
 
+  - name: Generate SSH key id_ecdsa_github
+    become_user: "{{ansible_user}}"
+    openssh_keypair:
+      path: "$HOME/.ssh/id_ecdsa_github"
+      type: ecdsa
+      size: 521
+      state: present
+      force: no
+
   - name: Set git global configs
     shell:
       cmd: git config --global user.name "Kalyan Parajuli"; git config --global user.email "kalyanranjanp@gmail.com"; git config --global core.editor vim; git --global config pull.rebase false; git config --global push.autoSetupRemote true
