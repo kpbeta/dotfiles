@@ -2,231 +2,248 @@
 - hosts: ["linux_localhost"]
   become: true
   # become_pass: <PASSWORD> # Else ansible.legacy.setup error
+  #########################################################################
+  # SHELL AND UTILITIES                                                   #
+  #########################################################################
   tasks:
-  - name: Install shell utilities w/ apt
-    apt:
-      state: latest
-      name:
-        - zsh
-  
-  - name: Ensure the user has a zsh shell.
-    user:
-      name: "{{ ansible_user }}"
-      shell: /usr/bin/zsh
-      state: present # same as doing chsh -s $(which zsh) $USER
+    block:
+      - name: Install shell utilities w/ apt
+        apt:
+          state: latest
+          name:
+            - zsh
 
-  - name: Download default .zshrc
-    ansible.builtin.get_url:
-      url: https://gist.githubusercontent.com/kpbeta/39cc785da0898096f2e3d38b2c344359/raw/e856dd98e24427ba0d48729ac17a03ad23456021/default-zshrc
-      dest: $HOME/.zshrc
-      mode: '0440'
+      - name: Ensure the user has a zsh shell.
+        user:
+        name: "{{ ansible_user }}"
+        shell: /usr/bin/zsh
+        state: present # same as doing chsh -s $(which zsh) $USER
 
-  - name: Install shell utilities w/ apt
-    apt:
-      state: latest
-      name:
-        - tmux
-        - xclip
-        - xcape
-        - openssh-server
-  
-  - name: Install other utilities (wget, curl, git, etc.)
-    apt:
-      state: latest
-      name:
-        - python3
-        - python2
-        - curl
-        - wget
-        - git
-        - bat
-  
-  - name: Install required packages like gcc, make, cmake, etc
-    apt:
-      state: latest
-      name: 
-        - gcc
-        - g++
-        - make
-        - cmake 
-        - libfontconfig
-        - libfontconfig1-dev
-        - pkg-config
-        - libfreetype6-dev
-        - libxcb-xfixes0-dev
-        - libxkbcommon-dev
-        - python3
+      - name: Download default .zshrc
+        ansible.builtin.get_url:
+          url: https://gist.githubusercontent.com/kpbeta/39cc785da0898096f2e3d38b2c344359/raw/e856dd98e24427ba0d48729ac17a03ad23456021/default-zshrc
+          dest: $HOME/.zshrc
+          mode: '0440'
 
-        # others at https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
-# - name: Install linux cargo packages
-#   community.general.cargo:
+      - name: Install shell utilities w/ apt
+        apt:
+          state: latest
+          name:
+            - tmux
+            - xclip
+            - xcape
+            - openssh-server
+      
+      - name: Install other utilities (wget, curl, git, etc.)
+        apt:
+          state: latest
+          name:
+            - python3
+            - python2
+            - curl
+            - wget
+            - git
+            - bat
+      
+      - name: Install required packages like gcc, make, cmake, etc
+        apt:
+          state: latest
+          name: 
+            - gcc
+            - g++
+            - make
+            - cmake 
+            - libfontconfig
+            - libfontconfig1-dev
+            - pkg-config
+            - libfreetype6-dev
+            - libxcb-xfixes0-dev
+            - libxkbcommon-dev
+      
+      - name: Install utilities (htop, tree, pstree, etc.)
+        apt:
+          state: latest
+          name:
+            - htop
+            - tree
+            - net-tools
+            - psmisc
+            - trash-cli
+            - gnome-sushi
+
+# #########################################################################
+# # ENVIRONMENT MANAGER                                                   #
+# #########################################################################
+# - name: Environment Managers
+#   block:
+#     - name: Set environment managers (direnv, npm, conda)
+#       apt:
+#         state: latest
+#         name:
+#           - direnv
+    
+#     - name: Install NVM
+#       ansible.builtin.shell: >
+#         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+#       args:
+#         creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+#     # shell:
+#     #   cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  
+
+# #########################################################################
+# # RUST SETUP AND UTILS                                                  #
+# #########################################################################
+# # Savior: https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
+# - name: Rust, cargo and cargo packages
+#   block:
+#     - name: Install Rust
+#       shell:
+#         cmd: |
+#           which rustc;
+#           if [[ $? -ne 0 ]]
+#           then curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+#           fi
+
+#     - name: Softlink Cargo # else cargo utils will not work through ansible
+#       ansible.builtin.file:
+#         src: "{{ ansible_home }}/.cargo/bin/cargo"
+#         dest: /usr/bin/cargo
+#         owner: root
+#         group: root
+#         state: link
+
+#     # https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a?permalink_comment_id=4084731
+#     # https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
+#     # https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
+#     - name: Install cargo packages
+#       shell:
+#         cmd: |
+#           rustup update;
+#           {{ ansible_home }}/.cargo/bin/cargo install \
+#           ripgrep exa bat du-dust tealdeer zoxide fd-find xcp \
+#           sd procs bottom broot bandwhich
+#     # - name: Install Cargo packages and utilities
+#     #   community.general.cargo:
+#     #     name: 
+#     #       - alacritty
+#     #       - ripgrep   # others ag, ack
+#     #       - exa       # lsd
+#     #       - bat       # cat alterative
+#     #       - du-dust      # du alternative
+#     #       - tealdeer  # tldr alternative (community manpages)
+#     #       - zoxide    # cd alternative
+#     #       - fd-find   # find alternative
+#     #       - xcp       # cp alternative
+#     #       - sd        # sed and awk alternative
+#     #       - procs     # ps alternative
+#     #       - bottom    # top alternative
+#     #       - broot     # tree alternative
+#     #       - bandwhich # Connection monitoring
+  
+#   #########################################################################
+#   # Install alacritty                                                     #
+#   #########################################################################
+#   # block:
+#   #   - name: Install 
+#   #     shell:
+#   #       cmd: |
+#   #         git clone https://github.com/alacritty/alacritty.git \
+#   #         "{{ansible_home}}/MyApplications/bin/alacritty";
+
+# - name: Install VM techs
+#   apt:
+#     state: latest
 #     name:
-#     - exa # ls alternative (also lsd)
-#     - zoxide # z (alternative to cd)
-#     - ripgrep
-#     - fd-find # alternative to find
-  - name: Set environment managers (direnv, npm, conda)
-    apt:
-      state: latest
-      name:
-        - direnv
-  
-  - name: Install NVM
-    ansible.builtin.shell: >
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-    args:
-      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-    # shell:
-    #   cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-  
-  ######### RUST SETUP
-  # Savior: https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
-  - name: Install Rust
-    shell:
-      cmd: |
-        which rustc;
-        if [[ $? -ne 0 ]]
-        then curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-        fi
+#       - vagrant
+#       - docker.io
 
-  - name: Softlink Cargo # else installing cargo utils will not work through ansible
-    ansible.builtin.file:
-      src: "{{ ansible_home }}/.cargo/bin/cargo"
-      dest: /usr/bin/cargo
-      owner: root
-      group: root
-      state: link
+# ########## TAILSCALE
+# - name: Install tailscale
+#   shell: 
+#     cmd: |
+#       which tailscale; 
+#       if [[ ! $? -eq 0 ]]
+#       then curl -fsSL https://tailscale.com/install.sh | sh
+#       fi
 
-  - name: Install utilities (htop, tree, pstree, etc.)
-    apt:
-      state: latest
-      name:
-        - htop
-        - tree
-        - net-tools
-        - psmisc
-        - trash-cli
-        - gnome-sushi
-  
-  # https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a?permalink_comment_id=4084731
-  # Curated List of command line utilities in Rust
-  # https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
-  # https://deepu.tech/rust-terminal-tools-linux-mac-windows-fish-zsh/
-  - name: Install Cargo packages and utilities
-    community.general.cargo:
-      name: 
-        - alacritty
-        - ripgrep   # others ag, ack
-        - exa       # lsd
-        - bat       # cat alterative
-        # - delta     # a pager for git
-        - du-dust      # du alternative
-        - tealdeer  # tldr alternative (community manpages)
-        - zoxide    # cd alternative
-        - fd-find   # find alternative
-        - xcp       # cp alternative
-        - sd        # sed and awk alternative
-        - procs     # ps alternative
-        - bottom    # top alternative
-        - broot     # tree alternative
-        - bandwhich # Connection monitoring
-  
+# - name: Install editor, markdown tools, etc. (pandoc, lynx, etc.)
+#   apt:
+#     state: latest
+#     name:
+#       - vim
+#       - gedit
+#       - pandoc
+#       - lynx
 
-  - name: Install VM techs
-    apt:
-      state: latest
-      name:
-        - vagrant
-        - docker.io
-  
-  # - name: Softlink Cargo
-  #   ansible.builtin.file:
-  #     src: /usr/lib/cargo
-  #     dest: /usr/bin/cargo
-  #     owner: root
-  #     group: root
-  #     state: link
+# - name: Creates directory
+#   become_user: "{{ansible_user}}"
+#   become: true
+#   file:
+#     path: $HOME/MyApplications/bin # MyApplications is created automatically
+#     state: directory
+#     owner: "{{ansible_user}}"
+#     group: "{{ansible_user}}"
+#     mode: 0775
 
-  ########## TAILSCALE
-  - name: Install tailscale
-    shell: 
-      cmd: |
-        which tailscale; 
-        if [[ ! $? -eq 0 ]]
-        then curl -fsSL https://tailscale.com/install.sh | sh
-        fi
-  - name: Install editor, markdown tools, etc. (pandoc, lynx, etc.)
-    apt:
-      state: latest
-      name:
-        - vim
-        - gedit
-        - pandoc
-        - lynx
+# # - name: Clone git repos
+# #   git:
+# #     repo: https://github.com/romkatv/powerlevel10k.git 
+# #     dest: ${ZSH_CUSTOM}/themes/powerlevel10k
+# #     clone: yes
+# #     update: yes
+# #     depth: 1
 
-  - name: Creates directory
-    become_user: "{{ansible_user}}"
-    become: true
-    file:
-      path: $HOME/MyApplications/bin # MyApplications is created automatically
-      state: directory
-      owner: "{{ansible_user}}"
-      group: "{{ansible_user}}"
-      mode: 0775
+# - name: Add copyq repository
+#   apt_repository:
+#     repo: ppa:hluk/copyq
+#     state: present
 
-  # - name: Clone git repos
-  #   git:
-  #     repo: https://github.com/romkatv/powerlevel10k.git 
-  #     dest: ${ZSH_CUSTOM}/themes/powerlevel10k
-  #     clone: yes
-  #     update: yes
-  #     depth: 1
+# - name: Install copyq
+#   apt:
+#     state: latest
+#     name: copyq
 
-  - name: Add copyq repository
-    apt_repository:
-      repo: ppa:hluk/copyq
-      state: present
-  
-  - name: Install copyq
-    apt:
-      state: latest
-      name: copyq
-  
-  - name: Install snap modules
-    snap:
-      name:
-        - bitwarden
-        - spotify
-        - signal-desktop
-              
-  - name: Install Surfshark
-    shell:
-      cmd: |
-        which surfshark;
-        if [[ $? -ne 0 ]] 
-        then 
-        curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
-        fi
+# - name: Install snap modules
+#   snap:
+#     name:
+#       - bitwarden
+#       - spotify
+#       - signal-desktop
+            
+# - name: Install Surfshark
+#   shell:
+#     cmd: |
+#       which surfshark;
+#       if [[ $? -ne 0 ]] 
+#       then 
+#       curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
+#       fi
 
-  ######### SSH and GIT CONFIGURATIONS
-  - name: Generate SSH key id_rsa_main
-    become_user: "{{ansible_user}}"
-    openssh_keypair:
-      path: "$HOME/.ssh/id_rsa_main"
-      type: rsa
-      size: 4096
-      state: present
-      force: no
+# ######### SSH and GIT CONFIGURATIONS
+# - name: Generate SSH key id_rsa_main
+#   become_user: "{{ansible_user}}"
+#   openssh_keypair:
+#     path: "$HOME/.ssh/id_rsa_main"
+#     type: rsa
+#     size: 4096
+#     state: present
+#     force: no
 
-  - name: Generate SSH key id_ecdsa_github
-    become_user: "{{ansible_user}}"
-    openssh_keypair:
-      path: "$HOME/.ssh/id_ecdsa_github"
-      type: ecdsa
-      size: 521
-      state: present
-      force: no
+# - name: Generate SSH key id_ecdsa_github
+#   become_user: "{{ansible_user}}"
+#   openssh_keypair:
+#     path: "$HOME/.ssh/id_ecdsa_github"
+#     type: ecdsa
+#     size: 521
+#     state: present
+#     force: no
 
-  - name: Set git global configs
-    shell:
-      cmd: git config --global user.name "Kalyan Parajuli"; git config --global user.email "kalyanranjanp@gmail.com"; git config --global core.editor vim; git --global config pull.rebase false; git config --global push.autoSetupRemote true
+# - name: Set git global configs
+#   shell:
+#     cmd: |
+#       git config --global user.name "Kalyan Parajuli";
+#       git config --global user.email "kalyanranjanp@gmail.com";
+#       git config --global core.editor vim;
+#       git --global config pull.rebase false;
+#       git config --global push.autoSetupRemote true;
