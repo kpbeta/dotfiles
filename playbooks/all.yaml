@@ -194,7 +194,7 @@
               echo "source ~/.bash_completion/alacritty" >> ~/.bashrc;
 
 #########################################################################
-# Install packages which need repo adding                               #
+# Install copyq from apt repository                                  #
 #########################################################################
     - name: Install copyq for clipboard support
       block:
@@ -207,6 +207,22 @@
           apt:
             state: latest
             name: copyq
+
+#########################################################################
+# Install obs-studio                            #
+#########################################################################
+    - name: Install obs-studio
+      block:
+        - name: Add obs-studio repo
+          apt_repository:
+            repo:  ppa:obsproject/obs-studio
+            state: present
+        - name: Install obs-studio
+          apt:
+            state: latest
+            name:
+              - ffmpeg
+              - obs-studio
 
 #########################################################################
 # Install Package with curl  (Surfshark, tailscale)                     #
@@ -259,6 +275,42 @@
           git config --global core.editor vim;
           git --global config pull.rebase false;
           git config --global push.autoSetupRemote true;
+
+###################################################
+# INSTALL miniconda3                              #
+###################################################
+    - name: Install miniconda3
+      become: true
+      become_user: "{{ ansible_user }}"
+      block:
+        - name: Generate SSH key id_rsa_main
+          ansible.builtin.get_url:
+            url: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+            dest: /tmp/miniconda.sh
+            mode: 0755
+
+        - name: Silent install of miniconda.
+          ansible.builtin.command:
+            chdir: /tmp
+            cmd: ./miniconda.sh -b -p $HOME/MyApplications/miniconda3
+
+###################################################
+# INSTALL zprezto                                 #
+###################################################
+    - name: Install zprezto
+      become: true
+      become_user: "{{ ansible_user }}"
+      ansible.builtin.git:
+        repo: https://github.com/sorin-ionescu/prezto.git
+        dest: "{{ ansible_home }}/.zprezto"
+        clone: yes
+        update: yes
+        recursive: true
+        track_submodules: true
+        force: yes
+
+
+
 
 
 
