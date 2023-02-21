@@ -209,7 +209,7 @@
             name: copyq
 
 #########################################################################
-# Install obs-studio                            #
+# Install obs-studio                                                   #
 #########################################################################
     - name: Install obs-studio
       block:
@@ -233,7 +233,8 @@
           which surfshark;
           if [[ $? -ne 0 ]] 
           then 
-          curl -f https://downloads.surfshark.com/linux/debian-install.sh --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
+          curl -f https://downloads.surfshark.com/linux/debian-install.sh \
+          --output /tmp/surfshark-install.sh && sh /tmp/surfshark-install.sh
           fi
 
     - name: Install tailscale
@@ -283,31 +284,41 @@
       become: true
       become_user: "{{ ansible_user }}"
       block:
-        - name: Generate SSH key id_rsa_main
+        - name: Get miniconda
           ansible.builtin.get_url:
             url: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
             dest: /tmp/miniconda.sh
             mode: 0755
 
-        - name: Silent install of miniconda.
+        - name: Silent install of miniconda
           ansible.builtin.command:
             chdir: /tmp
-            cmd: ./miniconda.sh -b -p $HOME/MyApplications/miniconda3
+            cmd: ./miniconda.sh -b -u -p $HOME/MyApplications/miniconda3
 
 ###################################################
 # INSTALL zprezto                                 #
 ###################################################
-    - name: Install zprezto
+    - name: Install miniconda3
       become: true
       become_user: "{{ ansible_user }}"
-      ansible.builtin.git:
-        repo: https://github.com/sorin-ionescu/prezto.git
-        dest: "{{ ansible_home }}/.zprezto"
-        clone: yes
-        update: yes
-        recursive: true
-        track_submodules: true
-        force: yes
+      block:
+      - name: Check if zprezto exists
+        register: zprezto_exists
+        stat: 
+          path: "{{ ansible_home }}/.zprezto"      
+      
+      - name: Install zprezto
+        when: zprezto_exists.stat.exists == False
+        become: true
+        become_user: "{{ ansible_user }}"
+        ansible.builtin.git:
+          repo: https://github.com/sorin-ionescu/prezto.git
+          dest: "{{ ansible_home }}/.zprezto"
+          clone: yes
+          update: yes
+          recursive: true
+          track_submodules: true
+          force: yes
 
 
 
