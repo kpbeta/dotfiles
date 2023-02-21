@@ -117,7 +117,7 @@
               {{ ansible_home }}/.cargo/bin/rustup update && 
               {{ ansible_home }}/.cargo/bin/cargo install \
               ripgrep exa bat du-dust tealdeer zoxide fd-find xcp \
-              sd procs bottom broot bandwhich cargo-deb
+              sd procs bottom broot bandwhich cargo-deb zellij
 
 #########################################################################
 # Install Vagrant, docker                                               #
