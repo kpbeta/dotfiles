@@ -295,10 +295,15 @@
             chdir: /tmp
             cmd: ./miniconda.sh -b -u -p $HOME/MyApplications/miniconda3
 
+        - name: Add miniconda bin to path
+          become: True
+          shell: echo 'export PATH=$HOME/MyApplications/miniconda3/bin:$PATH' >> /etc/profile
+
+
 ###################################################
 # INSTALL zprezto                                 #
 ###################################################
-    - name: Install miniconda3
+    - name: Install zprezto
       become: true
       become_user: "{{ ansible_user }}"
       block:
@@ -319,14 +324,6 @@
           recursive: true
           track_submodules: true
           force: yes
-
-
-
-
-
-
-
-
 
 
 
