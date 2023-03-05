@@ -295,9 +295,9 @@
             chdir: /tmp
             cmd: ./miniconda.sh -b -u -p $HOME/MyApplications/miniconda3
 
-        - name: Add miniconda bin to path
-          become: True
-          shell: echo 'export PATH=$HOME/MyApplications/miniconda3/bin:$PATH' >> /etc/profile
+    - name: Add miniconda bin to path
+      become: True
+      shell: echo 'export PATH=$HOME/MyApplications/miniconda3/bin:$PATH' >> /etc/profile
 
 
 ###################################################
@@ -328,24 +328,6 @@
 ###################################################
 # INSTALL nvim              #
 ###################################################
-    - name: Install nvim
-      block:
-        - name: Get nvim
-          ansible.builtin.get_url:
-            url:  https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-            dest: /tmp/nvim.deb
-        -name: Install nvim
-          shell:
-            cmd: sudo apt install /tmp/nvim.deb
-        
-        - name: Install AstroNvim
-          shell: 
-            cmd: |
-              mv ~/.config/nvim ~/.config/nvim.bak
-              mv ~/.local/share/nvim ~/.local/share/nvim.bak
-              mv ~/.local/state/nvim ~/.local/state/nvim.bak
-              mv ~/.cache/nvim ~/.cache/nvim.bak
-              git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 
 
