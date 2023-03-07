@@ -60,6 +60,7 @@
           - pandoc
           - lynx
           - gzip
+          - pm-utils     # hibernation
     - name: Install snap modules
       snap:
         name:
